@@ -9,3 +9,4 @@
   - Faculty of Science & Humanities, Poornima University, Jaipur
 - **In Association With**:
   - Centre for Development of Physics Education (CDPE), University of Rajasthan, Jaipur
+
