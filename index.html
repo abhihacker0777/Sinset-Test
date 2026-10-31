@@ -1734,7 +1734,9 @@
             border-radius: var(--radius);
             box-shadow: var(--shadow);
             overflow: hidden;
-            margin-bottom: 54px;
+            margin-bottom: 40px;
+            opacity: 1 !important;
+            transform: none !important;
         }
 
         .cm-collapsible summary {
@@ -3307,7 +3309,7 @@
                 </div>
             </div>
 
-            <details class="cm-collapsible reveal" open>
+            <details class="cm-collapsible">
                 <summary>All Committees <span class="chip-count">70+ members</span></summary>
                 <div class="cm-boxes">
                     <div class="cm-box">
@@ -3764,7 +3766,7 @@
                     }
                 });
             },
-            { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+            { threshold: 0.02, rootMargin: "0px 0px -20px 0px" }
         );
         document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
