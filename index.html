@@ -1,0 +1,3863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SINSET 2027 — International Conference | Poornima University, Jaipur</title>
+    <meta name="description"
+        content="SINSET 2027 — 1st International Conference on Sustainable Innovations in Natural Sciences, Engineering and Technology. February 27–28, 2027 · Poornima University, Jaipur. Hybrid Mode." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        /* ============ SINSET 2027 — Redesign ============ */
+        :root {
+            --bg: #f6f8fb;
+            --bg-card: #ffffff;
+            --ink: #0b1f3a;
+            --ink-2: #3c4a63;
+            --muted: #64748b;
+            --line: rgba(11, 31, 58, 0.08);
+            --primary: #0e7a5f;
+            --primary-2: #16a34a;
+            --accent: #f5b942;
+            --navy: #0b1f3a;
+            --navy-2: #0e2a4d;
+            --radius: 18px;
+            --shadow: 0 10px 30px rgba(11, 31, 58, 0.08);
+            --shadow-lg: 0 24px 60px rgba(11, 31, 58, 0.14);
+            --grad: linear-gradient(90deg, #16a34a, #2dd4a7 50%, #f5b942);
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", system-ui, sans-serif;
+            color: var(--ink);
+            background: var(--bg);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: "Sora", sans-serif;
+            line-height: 1.2;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        sup {
+            font-size: 0.68em;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+            top: -0.42em;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: 0 auto;
+        }
+
+        .grad-text {
+            background: var(--grad);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        /* ---------- Scroll progress ---------- */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: var(--grad);
+            z-index: 1000;
+            border-radius: 0 3px 3px 0;
+            transition: width 0.08s linear;
+        }
+
+        /* ---------- Navbar ---------- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 900;
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid transparent;
+            transition: all 0.35s var(--ease);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.92);
+            border-bottom: 1px solid var(--line);
+            box-shadow: 0 6px 24px rgba(11, 31, 58, 0.06);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: "Sora", sans-serif;
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: var(--ink);
+        }
+
+        .brand-mark {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), #0b5f4a);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            box-shadow: 0 6px 16px rgba(14, 122, 95, 0.35);
+        }
+
+        .brand-text em {
+            font-style: normal;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-links a {
+            padding: 9px 14px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--ink-2);
+            transition: all 0.25s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            background: rgba(14, 122, 95, 0.07);
+        }
+
+        .nav-links a.nav-cta {
+            background: var(--navy);
+            color: #fff;
+            font-weight: 600;
+            margin-left: 8px;
+            box-shadow: 0 4px 14px rgba(11, 31, 58, 0.25);
+        }
+
+        .nav-links a.nav-cta:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: 0;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2.5px;
+            background: var(--ink);
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(7.5px) rotate(45deg);
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-7.5px) rotate(-45deg);
+        }
+
+        /* ---------- Buttons ---------- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 26px;
+            border-radius: 14px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            font-family: "Inter", sans-serif;
+            transition: all 0.3s var(--ease);
+            cursor: pointer;
+            border: 0;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
+            color: #fff;
+            box-shadow: 0 10px 24px rgba(22, 163, 74, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 34px rgba(22, 163, 74, 0.45);
+        }
+
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(8px);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.22);
+            transform: translateY(-3px);
+        }
+
+        .btn-primary-outline {
+            border: 1.5px solid rgba(11, 31, 58, 0.2);
+            color: var(--ink);
+            background: var(--bg-card);
+        }
+
+        .btn-primary-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-lg {
+            padding: 16px 34px;
+            font-size: 1.02rem;
+        }
+
+        /* ---------- Partners ---------- */
+        .partner-group {
+            margin-bottom: 28px;
+        }
+
+        .partner-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .partner-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 30px 20px;
+            border-radius: 16px;
+            text-align: center;
+            background: var(--bg-card);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+            transition: all 0.3s var(--ease);
+        }
+
+        .partner-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+
+        .partner-card strong {
+            font-family: "Sora", sans-serif;
+            color: var(--ink);
+        }
+
+        .partner-card span {
+            font-size: 0.85rem;
+            color: var(--ink-2);
+        }
+
+        .venue-card:target {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+        }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 140px 0 110px;
+            background: radial-gradient(1200px 700px at 80% -10%, #123056 0%, var(--navy) 55%),
+                radial-gradient(900px 600px at -10% 110%, #0c3b34 0%, transparent 60%),
+                var(--navy);
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .hero-photo {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(11, 31, 58, 0.55), rgba(11, 31, 58, 0.62)),
+                url("https://imgs.search.brave.com/WQEFVuUH4drhcV2tAH416kgbUmjjJA40CCvMg43JNxc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lZHV2/b3cuY29tL2ltYWdl/cy9jb2xsZWdlLzEw/NzNfcG9vcm5pbWEt/dW5pdmVyc2l0eS1q/YWlwdXItMS5qcGVn");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-photo::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 65% at 50% 40%, transparent 30%, rgba(11, 31, 58, 0.35) 100%);
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(70px);
+            opacity: 0.5;
+            animation: float 11s ease-in-out infinite alternate;
+        }
+
+        .orb-1 {
+            width: 420px;
+            height: 420px;
+            background: rgba(22, 163, 74, 0.35);
+            top: -120px;
+            right: -80px;
+        }
+
+        .orb-2 {
+            width: 340px;
+            height: 340px;
+            background: rgba(245, 185, 66, 0.28);
+            bottom: -100px;
+            left: -90px;
+            animation-delay: -4s;
+        }
+
+        .orb-3 {
+            width: 260px;
+            height: 260px;
+            background: rgba(45, 212, 167, 0.25);
+            top: 40%;
+            left: 55%;
+            animation-delay: -8s;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(-24px) scale(1);
+            }
+
+            to {
+                transform: translateY(26px) scale(1.08);
+            }
+        }
+
+        .grid-overlay {
+            position: absolute;
+            inset: 0;
+            opacity: 0.5;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+            background-size: 56px 56px;
+            mask-image: radial-gradient(ellipse 70% 65% at 50% 40%, #000 30%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 65% at 50% 40%, #000 30%, transparent 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 26px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+
+        .badge-green {
+            background: rgba(45, 212, 167, 0.14);
+            color: #7fefc8;
+            border: 1px solid rgba(45, 212, 167, 0.4);
+        }
+
+        .badge-amber {
+            background: rgba(245, 185, 66, 0.14);
+            color: #ffe3a0;
+            border: 1px solid rgba(245, 185, 66, 0.4);
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 5.4rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-title .grad-text {
+            background: linear-gradient(90deg, #7cc9ff, #7fefc8 50%, #ffe3a0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-sub {
+            font-size: clamp(1.05rem, 2.4vw, 1.45rem);
+            color: rgba(255, 255, 255, 0.62);
+            font-weight: 400;
+            max-width: 780px;
+            margin: 18px auto 20px;
+        }
+
+        .hero-collab {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            max-width: 980px;
+            margin: 0 auto 34px;
+            padding: 0;
+            text-align: center;
+        }
+
+        .hero-collab-tag {
+            font-size: clamp(0.95rem, 1.8vw, 1.12rem);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #ffe3a0;
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+
+        .hero-collab-text {
+            font-family: "Sora", sans-serif;
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            color: #ffffff;
+            font-weight: 700;
+            line-height: 1.45;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .meta-chip {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 16px;
+            padding: 13px 20px;
+            backdrop-filter: blur(10px);
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.25s var(--ease);
+        }
+
+        .meta-chip.clickable {
+            cursor: pointer;
+        }
+
+        .meta-chip.clickable:hover {
+            background: rgba(255, 255, 255, 0.14);
+            border-color: rgba(45, 212, 167, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .meta-chip.clickable:hover .chip-arrow {
+            transform: translate(2px, -2px);
+            color: #2dd4a7;
+        }
+
+        .meta-chip svg {
+            color: #7fefc8;
+            flex-shrink: 0;
+        }
+
+        .meta-chip .chip-arrow {
+            color: rgba(255, 255, 255, 0.5);
+            margin-left: 4px;
+            transition: transform 0.2s var(--ease), color 0.2s var(--ease);
+        }
+
+        .meta-chip strong {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .meta-chip span {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.35;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 44px;
+        }
+
+        .countdown {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 22px 34px;
+            backdrop-filter: blur(10px);
+            margin: 0 auto 30px;
+        }
+
+        .cd-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 12px;
+        }
+
+        .cd-timer {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .cd-cell {
+            text-align: center;
+            min-width: 66px;
+        }
+
+        .cd-cell span {
+            display: block;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .cd-cell label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .cd-sep {
+            font-family: "JetBrains Mono", monospace;
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 1.6rem;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 26px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 26px;
+            height: 44px;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            border-radius: 16px;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+        }
+
+        .scroll-hint span {
+            width: 4px;
+            height: 9px;
+            background: #fff;
+            border-radius: 3px;
+            margin-top: 7px;
+            animation: scrollWheel 1.6s ease infinite;
+        }
+
+        @keyframes scrollWheel {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+        }
+
+        .desktop-br {
+            display: none;
+        }
+
+        /* ---------- Stats ---------- */
+        .stats-strip {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            padding: 44px 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 12px;
+        }
+
+        .stat strong {
+            font-family: "Sora", sans-serif;
+            font-size: clamp(1.9rem, 4vw, 2.7rem);
+            font-weight: 800;
+            background: var(--grad);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+
+        .stat span {
+            font-size: 0.88rem;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        /* ---------- Sections ---------- */
+        .section {
+            padding: 56px 0;
+        }
+
+        #speakers {
+            padding-bottom: 40px;
+        }
+
+        #submission {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        #partners {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .section-alt {
+            background: linear-gradient(180deg, #eef2f7 0%, #f6f8fb 100%);
+        }
+
+        .section-dark {
+            background: var(--navy);
+            color: #fff;
+        }
+
+        .section-head {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 36px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--primary);
+            background: rgba(14, 122, 95, 0.09);
+            padding: 7px 16px;
+            border-radius: 999px;
+            margin-bottom: 18px;
+        }
+
+        .section-dark .eyebrow {
+            color: #7fefc8;
+            background: rgba(45, 212, 167, 0.12);
+        }
+
+        .section-head h2 {
+            font-size: clamp(1.8rem, 4.4vw, 2.8rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+
+        .section-head p {
+            color: var(--muted);
+            font-size: 1.04rem;
+        }
+
+        .section-dark .section-head p {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        /* ---------- Timeline / Important Dates ---------- */
+        .dates-layout {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .dates-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 26px;
+        }
+
+        .dates-col {
+            position: relative;
+            padding-left: 34px;
+        }
+
+        .dates-col::before {
+            content: "";
+            position: absolute;
+            left: 9px;
+            top: 14px;
+            bottom: 14px;
+            width: 3px;
+            border-radius: 3px;
+            background: linear-gradient(180deg, var(--primary-2), var(--accent));
+        }
+
+        .dates-col.dates-right::before {
+            background: linear-gradient(180deg, var(--accent), #ef4444);
+        }
+
+        .dates-center {
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .dates-center .tl-card.event {
+            padding: 18px 28px;
+            border-radius: 16px;
+            box-shadow: 0 14px 36px rgba(11, 31, 58, 0.2);
+            transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+        }
+
+        .dates-center .tl-card.event:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 44px rgba(11, 31, 58, 0.28);
+        }
+
+        .dates-center .tl-card.event h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .dates-center .tl-card.event time {
+            font-size: 1.05rem;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 760px;
+            margin: 0 auto;
+            padding-left: 34px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 9px;
+            top: 6px;
+            bottom: 6px;
+            width: 3px;
+            border-radius: 3px;
+            background: linear-gradient(180deg, var(--primary-2), var(--accent));
+        }
+
+        .tl-item {
+            position: relative;
+            margin-bottom: 18px;
+        }
+
+        .tl-dot {
+            position: absolute;
+            left: -34px;
+            top: 22px;
+            width: 21px;
+            height: 21px;
+            border-radius: 50%;
+            background: #fff;
+            border: 4px solid var(--primary-2);
+            box-shadow: 0 0 0 5px rgba(22, 163, 74, 0.12);
+        }
+
+        .tl-dot.gold {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 5px rgba(245, 185, 66, 0.15);
+        }
+
+        .tl-dot.late {
+            border-color: #ef4444;
+            box-shadow: 0 0 0 5px rgba(239, 68, 68, 0.12);
+        }
+
+        .tl-dot.event {
+            border-color: var(--navy);
+            box-shadow: 0 0 0 5px rgba(11, 31, 58, 0.14);
+            background: var(--accent);
+        }
+
+        .tl-card {
+            background: var(--bg-card);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 16px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s var(--ease);
+        }
+
+        .tl-card:hover {
+            transform: translateX(6px);
+        }
+
+        .tl-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .tl-card time {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary);
+            white-space: nowrap;
+        }
+
+        .tl-card.gold {
+            background: linear-gradient(135deg, #fffbeb, #fff);
+            border-color: rgba(245, 185, 66, 0.45);
+        }
+
+        .tl-card.gold time {
+            color: #b45309;
+        }
+
+        .tl-card.event {
+            background: var(--navy);
+            color: #fff;
+            border-color: var(--navy);
+        }
+
+        .tl-card.event time {
+            color: var(--accent);
+        }
+
+        .tl-card.event h4 {
+            color: #fff;
+        }
+
+        /* ---------- About tabs ---------- */
+        .tabs {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tab-list {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 34px;
+        }
+
+        .tab {
+            padding: 11px 22px;
+            border-radius: 999px;
+            border: 1.5px solid var(--line);
+            background: var(--bg-card);
+            color: var(--ink-2);
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: "Inter", sans-serif;
+            cursor: pointer;
+            transition: all 0.3s var(--ease);
+        }
+
+        .tab:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .tab.active {
+            background: var(--navy);
+            color: #fff;
+            border-color: var(--navy);
+            box-shadow: 0 8px 20px rgba(11, 31, 58, 0.2);
+        }
+
+        .tab-panel {
+            display: none;
+            background: var(--bg-card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 36px 40px;
+            box-shadow: var(--shadow);
+            animation: fadeUp 0.45s var(--ease);
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        .tab-panel p {
+            margin-bottom: 16px;
+            color: var(--ink-2);
+        }
+
+        .tab-quote {
+            font-style: italic;
+            border-left: 3px solid var(--accent);
+            padding-left: 18px;
+            color: var(--ink);
+            font-weight: 500;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ---------- Tracks ---------- */
+        .tracks-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .track-card {
+            background: var(--bg-card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 30px 28px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+        }
+
+        .track-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--i, var(--primary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s var(--ease);
+        }
+
+        .track-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .track-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .track-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 15px;
+            display: grid;
+            place-items: center;
+            background: color-mix(in srgb, var(--i, #4f8cff) 12%, white);
+            color: var(--i, #4f8cff);
+            margin-bottom: 18px;
+            border: 1px solid color-mix(in srgb, var(--i, #4f8cff) 25%, white);
+        }
+
+        .track-card h3 {
+            font-size: 1.02rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .track-card h3 em {
+            display: block;
+            font-style: normal;
+            background: var(--i, #4f8cff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .track-card ul {
+            list-style: none;
+            margin-bottom: 14px;
+        }
+
+        .track-card li {
+            padding: 5px 0 5px 20px;
+            position: relative;
+            font-size: 0.9rem;
+            color: var(--ink-2);
+        }
+
+        .track-card li::before {
+            content: "";
+            position: absolute;
+            left: 2px;
+            top: 13px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--i, #4f8cff);
+            opacity: 0.75;
+        }
+
+        .track-more {
+            border-top: 1px dashed var(--line);
+            padding-top: 12px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .awards-row {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 44px;
+            flex-wrap: wrap;
+        }
+
+        .award {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            background: linear-gradient(135deg, #fffbeb, #fff);
+            border: 1px solid rgba(245, 185, 66, 0.4);
+            border-radius: var(--radius);
+            padding: 22px 28px;
+            max-width: 460px;
+        }
+
+        .award span {
+            font-size: 2rem;
+        }
+
+        .award h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .award p {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        /* ---------- Speakers ---------- */
+        .speaker-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .speaker-card {
+            background: var(--bg-card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 40px 34px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.35s var(--ease);
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .speaker-avatar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 22px;
+        }
+
+        .avatar-ring {
+            width: 118px;
+            height: 118px;
+            border-radius: 50%;
+            position: relative;
+            color: var(--primary);
+            background: linear-gradient(135deg, rgba(22, 163, 74, 0.12), rgba(245, 185, 66, 0.14));
+            border: 3px solid var(--bg-card);
+            outline: 3px solid var(--primary-2);
+            overflow: hidden;
+        }
+
+        .avatar-ring img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+            display: block;
+        }
+
+        .avatar-ring svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .speaker-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+        }
+
+        .speaker-role {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+        }
+
+        .speaker-aff {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .speaker-cta {
+            background: var(--navy);
+            color: #fff;
+            border-radius: var(--radius);
+            padding: 40px 34px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .speaker-cta h3 {
+            font-size: 1.4rem;
+        }
+
+        .speaker-cta p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .speaker-cta .btn {
+            align-self: flex-start;
+        }
+
+        /* ---------- Submission ---------- */
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-bottom: 32px;
+        }
+
+        .guide-card {
+            background: var(--bg-card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: var(--shadow);
+            transition: transform 0.35s var(--ease);
+        }
+
+        .guide-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .g-num {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: var(--grad);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .guide-card h4 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .guide-card p {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .submit-cta {
+            text-align: center;
+            background: linear-gradient(135deg, var(--navy), var(--navy-2));
+            color: #fff;
+            border-radius: 24px;
+            padding: 48px 30px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-cta::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(22, 163, 74, 0.25);
+            filter: blur(70px);
+            top: -100px;
+            right: -60px;
+        }
+
+        .submit-cta h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .submit-cta p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 26px;
+            position: relative;
+        }
+
+        .submit-cta small {
+            display: block;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 0.78rem;
+            position: relative;
+        }
+
+        .pub-strip {
+            text-align: center;
+            background: var(--bg-card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 34px 28px;
+            box-shadow: var(--shadow);
+            scroll-margin-top: 110px;
+        }
+
+        .pub-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .pub-logos {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .pub-partner-img {
+            height: 54px;
+            width: auto;
+            max-width: min(320px, 100%);
+            object-fit: contain;
+            border-radius: 14px;
+            padding: 6px 16px;
+            background: #fff;
+            border: 1.5px solid var(--line);
+            box-shadow: 0 2px 10px rgba(11, 31, 58, 0.05);
+            transition: all 0.3s var(--ease);
+            box-sizing: border-box;
+            display: inline-block;
+        }
+
+        .pub-partner-img:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 24px rgba(14, 122, 95, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .pub-logo {
+            font-family: "Sora", sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--ink);
+            padding: 0 28px;
+            height: 54px;
+            border: 1.5px solid var(--line);
+            border-radius: 14px;
+            background: #fff;
+            filter: grayscale(0.2);
+            transition: all 0.3s var(--ease);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .pub-logo:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+            transform: translateY(-3px);
+            color: var(--primary);
+        }
+
+        .pub-logo.scopus {
+            background: linear-gradient(135deg, #0e7a5f, #16a34a);
+            color: #fff;
+            border-color: transparent;
+            filter: none;
+            box-shadow: 0 4px 14px rgba(14, 122, 95, 0.25);
+        }
+
+        .pub-logo.scopus:hover {
+            box-shadow: 0 8px 22px rgba(14, 122, 95, 0.35);
+            color: #fff;
+        }
+
+        .pub-strip>small {
+            display: block;
+            margin-top: 16px;
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+
+        /* ---------- Registration ---------- */
+        .currency-toggle {
+            display: inline-flex;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 999px;
+            padding: 5px;
+            margin-top: 20px;
+        }
+
+        .cur-btn {
+            padding: 10px 24px;
+            border-radius: 999px;
+            border: 0;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 700;
+            font-family: "Inter", sans-serif;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .cur-btn.active {
+            background: var(--primary-2);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(22, 163, 74, 0.4);
+        }
+
+        .fee-note {
+            margin: 26px 0 14px;
+        }
+
+        .fee-tag {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .fee-tag.indian {
+            background: rgba(22, 163, 74, 0.15);
+            color: #bff0d4;
+            border: 1px solid rgba(22, 163, 74, 0.4);
+        }
+
+        .fee-tag.foreign {
+            background: rgba(45, 212, 167, 0.12);
+            color: #7fefc8;
+            border: 1px solid rgba(45, 212, 167, 0.4);
+        }
+
+        .reg-table {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-bottom: 18px;
+        }
+
+        .rg-head,
+        .rg-row {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr 1fr 1fr;
+            gap: 8px;
+            padding: 16px 26px;
+            align-items: center;
+        }
+
+        .rg-head {
+            background: rgba(255, 255, 255, 0.07);
+            font-family: "Sora", sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .rg-row {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            transition: background 0.25s;
+        }
+
+        .rg-row:hover {
+            background: rgba(255, 255, 255, 0.045);
+        }
+
+        .rg-row strong {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .cell {
+            font-family: "JetBrains Mono", monospace;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #fff;
+        }
+
+        .rg-head div:not(:first-child),
+        .cell:not(:first-of-type) {
+            text-align: center;
+        }
+
+        .rg-head div:nth-child(2),
+        .rg-row .cell:nth-of-type(1) {
+            color: #7fefc8;
+        }
+
+        .bank-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+            margin-top: 40px;
+        }
+
+        .bank-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius);
+            padding: 30px;
+        }
+
+        .bank-card h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            color: #7fefc8;
+        }
+
+        .bank-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .bank-table td {
+            padding: 10px 0;
+            font-size: 0.9rem;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .bank-table td:first-child {
+            color: rgba(255, 255, 255, 0.55);
+            width: 140px;
+            font-weight: 500;
+        }
+
+        .bank-table td:last-child {
+            font-family: "JetBrains Mono", monospace;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .reg-window {
+            padding: 16px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
+        }
+
+        .reg-window:last-child {
+            border-bottom: 0;
+        }
+
+        .rw-date {
+            display: inline-block;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            background: rgba(22, 163, 74, 0.2);
+            color: #9cf0c6;
+            padding: 4px 12px;
+            border-radius: 999px;
+            margin-bottom: 8px;
+        }
+
+        .reg-window.warn .rw-date {
+            background: rgba(245, 185, 66, 0.18);
+            color: #ffe3a0;
+        }
+
+        .reg-window h5 {
+            font-family: "Sora", sans-serif;
+            font-size: 0.98rem;
+            margin-bottom: 4px;
+        }
+
+        .reg-window p {
+            font-size: 0.84rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ---------- Committee ---------- */
+        .cm-group {
+            margin-bottom: 54px;
+        }
+
+        .cm-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .cm-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--line);
+        }
+
+        .cm-group.advisory .cm-title {
+            margin-bottom: 8px;
+        }
+
+        .cm-subtitle {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin: 0 0 20px 0;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .cards-grid.small {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .person-card {
+            background: var(--bg-card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 26px 22px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+        }
+
+        .person-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .person-card h4 {
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+
+        .person-card p {
+            font-size: 0.82rem;
+            color: var(--muted);
+        }
+
+        .person-card.sm {
+            padding: 20px 16px;
+        }
+
+        .person-card.sm h4 {
+            font-size: 0.92rem;
+        }
+
+        .p-avatar {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 14px;
+            border-radius: 50%;
+            color: var(--primary);
+            background: rgba(14, 122, 95, 0.08);
+            display: grid;
+            place-items: center;
+            border: 2px solid rgba(14, 122, 95, 0.18);
+            overflow: hidden;
+        }
+
+        .p-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.12);
+        }
+
+        .p-avatar.gold {
+            color: #b45309;
+            background: rgba(245, 185, 66, 0.12);
+            border-color: rgba(245, 185, 66, 0.4);
+        }
+
+        .cm-collapsible {
+            background: var(--bg-card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 54px;
+        }
+
+        .cm-collapsible summary {
+            padding: 20px 26px;
+            font-family: "Sora", sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: background 0.25s;
+        }
+
+        .cm-collapsible summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .cm-collapsible summary:hover {
+            background: rgba(14, 122, 95, 0.04);
+        }
+
+        .cm-collapsible[open] summary {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .cm-collapsible summary::before {
+            content: "+";
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--navy);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-weight: 400;
+            flex-shrink: 0;
+        }
+
+        .cm-collapsible[open] summary::before {
+            content: "–";
+            background: var(--primary);
+        }
+
+        .chip-count {
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: rgba(14, 122, 95, 0.09);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 999px;
+        }
+
+        .cm-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+            padding: 30px 26px;
+        }
+
+        .cm-col h4 {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin: 14px 0 8px;
+        }
+
+        .cm-col h4:first-child {
+            margin-top: 0;
+        }
+
+        .cm-col ul {
+            list-style: none;
+        }
+
+        .cm-col li {
+            font-size: 0.85rem;
+            color: var(--ink-2);
+            padding: 4px 0 4px 16px;
+            position: relative;
+        }
+
+        .cm-col li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .advisory-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .adv-chip {
+            background: var(--bg-card);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 14px 18px;
+            transition: all 0.3s var(--ease);
+            box-shadow: var(--shadow);
+        }
+
+        .adv-chip:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .adv-chip strong {
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .adv-chip span {
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+
+        /* ---------- Sponsorship ---------- */
+        .sponsor-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1020px;
+            margin: 0 auto 44px;
+            align-items: stretch;
+        }
+
+        .sponsor-card {
+            --accent: var(--primary);
+            background: var(--bg-card);
+            border: 1.5px solid var(--line);
+            border-radius: 22px;
+            padding: 34px 30px;
+            box-shadow: var(--shadow);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+        }
+
+        .sponsor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .sponsor-card.featured {
+            transform: scale(1.04);
+            border-color: var(--accent);
+            box-shadow: 0 20px 50px rgba(245, 185, 66, 0.22);
+            background: linear-gradient(180deg, #fffdf5, #fff);
+        }
+
+        .sponsor-card.featured:hover {
+            transform: scale(1.04) translateY(-8px);
+        }
+
+        .sp-badge {
+            position: absolute;
+            top: -13px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--navy);
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 6px 16px;
+            border-radius: 999px;
+            box-shadow: 0 6px 16px rgba(245, 185, 66, 0.4);
+        }
+
+        .sp-tier {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .sp-price {
+            font-family: "Sora", sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .sponsor-card ul {
+            list-style: none;
+            margin-bottom: 0;
+        }
+
+        .sponsor-card li {
+            padding: 8px 0 8px 26px;
+            position: relative;
+            font-size: 0.9rem;
+            color: var(--ink-2);
+            border-bottom: 1px dashed var(--line);
+        }
+
+        .sponsor-card li:last-child {
+            border-bottom: 0;
+        }
+
+        .sponsor-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 800;
+        }
+
+        /* ---------- Venue ---------- */
+        .venue-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .venue-card {
+            background: var(--bg-card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 34px 28px;
+            box-shadow: var(--shadow);
+            transition: transform 0.35s var(--ease);
+        }
+
+        .venue-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .venue-card>svg {
+            color: var(--primary);
+            margin-bottom: 18px;
+        }
+
+        .venue-card h4 {
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+        }
+
+        .venue-card p {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+
+        .venue-card .hint {
+            font-size: 0.84rem;
+            background: rgba(14, 122, 95, 0.06);
+            padding: 10px 14px;
+            border-radius: 10px;
+            margin-bottom: 18px;
+        }
+
+        .contact-row {
+            padding: 12px 0;
+            border-bottom: 1px dashed var(--line);
+        }
+
+        .contact-row:last-of-type {
+            border-bottom: 0;
+            margin-bottom: 14px;
+        }
+
+        .contact-row strong {
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .contact-row a {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .contact-row a:hover {
+            text-decoration: underline;
+        }
+
+        /* ---------- Footer ---------- */
+        .footer {
+            background: var(--navy);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 64px 0 0;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+            padding-bottom: 44px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer h4 {
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 14px;
+        }
+
+        .footer h4 em {
+            font-style: normal;
+            color: var(--accent);
+        }
+
+        .footer-top p {
+            font-size: 0.9rem;
+            max-width: 480px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 26px;
+            align-content: center;
+        }
+
+        .footer-links a {
+            font-size: 0.9rem;
+            transition: color 0.25s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 26px 0;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        /* ---------- Reveal animations ---------- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-head.reveal.visible h2 {
+            animation: fadeUp 0.6s var(--ease);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1024px) {
+
+            .tracks-grid,
+            .guide-grid,
+            .cm-columns,
+            .cm-boxes,
+            .advisory-grid,
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cards-grid.small {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .venue-grid,
+            .bank-wrap,
+            .sponsor-grid,
+            .speaker-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .sponsor-card.featured {
+                transform: none;
+            }
+
+            .sponsor-card.featured:hover {
+                transform: translateY(-8px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dates-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .hamburger {
+                display: block;
+                z-index: 1001;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -320px;
+                width: 300px;
+                height: 100vh;
+                background: #fff;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 100px 30px 30px;
+                gap: 6px;
+                box-shadow: -20px 0 60px rgba(11, 31, 58, 0.15);
+                transition: right 0.4s var(--ease);
+            }
+
+            .nav-links.open {
+                right: 0;
+            }
+
+            .nav-links a {
+                width: 100%;
+                padding: 13px 16px;
+                font-size: 1rem;
+            }
+
+            .nav-links a.nav-cta {
+                margin-left: 0;
+                text-align: center;
+            }
+
+            .section {
+                padding: 42px 0;
+            }
+
+            #speakers,
+            #submission,
+            #partners {
+                padding-top: 32px;
+                padding-bottom: 32px;
+            }
+
+            .section-head {
+                margin-bottom: 24px;
+            }
+
+            .tracks-grid,
+            .guide-grid,
+            .cm-columns,
+            .cm-boxes,
+            .advisory-grid,
+            .cards-grid,
+            .cards-grid.small,
+            .venue-grid,
+            .bank-wrap,
+            .sponsor-grid,
+            .speaker-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rg-head,
+            .rg-row {
+                grid-template-columns: 1.4fr 1fr 1fr 1fr;
+                padding: 13px 16px;
+            }
+
+            .rg-head {
+                font-size: 0.7rem;
+            }
+
+            .cell {
+                font-size: 0.8rem;
+            }
+
+            .bank-table td:first-child {
+                width: 104px;
+            }
+
+            .tl-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .hero {
+                padding: 130px 0 90px;
+            }
+
+            .cd-timer {
+                gap: 8px;
+            }
+
+            .cd-cell {
+                min-width: 54px;
+            }
+
+            .cd-cell span {
+                font-size: 1.5rem;
+            }
+
+            .cd-sep {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                padding: 30px 0;
+            }
+
+            .tab-panel {
+                padding: 26px 22px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-top {
+                flex-direction: column;
+            }
+
+            .submit-cta {
+                padding: 44px 22px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .advisory-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-ctas .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .meta-chip {
+                width: 100%;
+            }
+        }
+
+        /* ---------- Committee boxes ---------- */
+        .cm-boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            padding: 30px 26px;
+        }
+
+        .cm-box {
+            background: var(--bg);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 24px 22px;
+        }
+
+        .cm-box h4 {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(14, 122, 95, 0.12);
+        }
+
+        .cm-member {
+            padding: 9px 0;
+            border-bottom: 1px dashed var(--line);
+        }
+
+        .cm-member:last-child {
+            border-bottom: 0;
+        }
+
+        .cm-member strong {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--ink);
+        }
+
+        .cm-member span {
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+
+        @media (max-width: 1024px) {
+            .cm-boxes {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cm-boxes {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230b1f3a'/><text x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' fill='%23f5b942' text-anchor='middle'>S</text></svg>" />
+</head>
+
+<body>
+
+    <!-- ============ PROGRESS BAR ============ -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ============ NAVBAR ============ -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="#home" class="brand">
+                <span class="brand-text">SINSET <em>2027</em></span>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#partners">Partners</a>
+                <a href="#call-for-papers">Call for Papers</a>
+                <a href="#submission">Submission</a>
+                <a href="#registrations">Registrations</a>
+                <a href="#committee">Committee</a>
+                <a href="#sponsorship">Sponsorship</a>
+                <a href="#venue" class="nav-cta">Contact</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-photo"></div>
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+            <div class="grid-overlay"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-badges reveal">
+                <span class="badge badge-green"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20" />
+                    </svg> Hybrid Mode</span>
+                <span class="badge badge-amber"><span>1<sup>st</sup> International Conference</span></span>
+            </div>
+            <h1 class="hero-title reveal">
+                SINSET <span class="grad-text">2027</span>
+            </h1>
+            <p class="hero-sub reveal">Sustainable Innovations in Natural Sciences,<br class="desktop-br"> Engineering
+                and Technology</p>
+            <div class="hero-collab reveal">
+                <span class="hero-collab-tag">Organised by</span>
+                <span class="hero-collab-text">Centre for Research, Instrumentation &amp; Development (CRID)</span>
+                <span class="hero-collab-text">And Faculty of Science &amp; Humanities, Poornima University,
+                    Jaipur</span>
+                <span class="hero-collab-tag">In Association With</span>
+                <span class="hero-collab-text">Centre for Development of Physics Education (CDPE), University of
+                    Rajasthan, Jaipur</span>
+            </div>
+            <div class="hero-ctas reveal">
+                <a href="#submission" class="btn btn-primary">Submit Paper <svg width="16" height="16"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg></a>
+                <a href="#registrations" class="btn btn-ghost">Register Now</a>
+            </div>
+            <div class="countdown reveal" id="countdown">
+                <div class="cd-label">Conference starts in</div>
+                <div class="cd-timer">
+                    <div class="cd-cell"><span id="cdDays">--</span><label>Days</label></div>
+                    <div class="cd-sep">:</div>
+                    <div class="cd-cell"><span id="cdHours">--</span><label>Hours</label></div>
+                    <div class="cd-sep">:</div>
+                    <div class="cd-cell"><span id="cdMins">--</span><label>Mins</label></div>
+                    <div class="cd-sep">:</div>
+                    <div class="cd-cell"><span id="cdSecs">--</span><label>Secs</label></div>
+                </div>
+            </div>
+            <div class="hero-meta reveal">
+                <div class="meta-chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" />
+                        <path d="M16 2v4M8 2v4M3 10h18" />
+                    </svg>
+                    <div><strong>February 27–28, 2027</strong><span>Two-day conference</span></div>
+                </div>
+                <div class="meta-chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <div><strong>Poornima University, Jaipur</strong><span>Online, worldwide</span></div>
+                </div>
+                <a href="#publication-partners" class="meta-chip clickable" title="View Publication Partners">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" />
+                    </svg>
+                    <div><strong>Publication Partners</strong><span>(Scopus-Indexed, Proceedings/Journals)</span></div>
+                    <svg class="chip-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <path d="M7 17l9.2-9.2M17 17V8H8" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <a href="#dates" class="scroll-hint"><span></span></a>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats-strip">
+        <div class="container stats-grid">
+            <div class="stat reveal"><strong data-count="6">6</strong><span>Thematic Tracks</span></div>
+            <div class="stat reveal"><strong data-count="15" data-suffix="+">15+</strong><span>Advisory Countries</span>
+            </div>
+            <div class="stat reveal"><strong data-count="2">2</strong><span>Days · 27–28 Feb 2027</span></div>
+        </div>
+    </section>
+
+    <!-- ============ IMPORTANT DATES ============ -->
+    <section class="section" id="dates">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="eyebrow">Mark Your Calendar</span>
+                <h2>Important <span class="grad-text">Dates</span></h2>
+                <p>Plan your journey from submission to presentation — deadlines in IST.</p>
+            </div>
+            <div class="dates-layout">
+                <div class="dates-grid">
+                    <!-- Left: Paper Submissions -->
+                    <div class="dates-col dates-left">
+                        <div class="tl-item reveal">
+                            <div class="tl-dot past"></div>
+                            <div class="tl-card">
+                                <h4>Full Paper Submission</h4><time>Nov 15, 2026</time>
+                            </div>
+                        </div>
+                        <div class="tl-item reveal">
+                            <div class="tl-dot"></div>
+                            <div class="tl-card">
+                                <h4>Acceptance Notification</h4><time>Jan 05, 2027</time>
+                            </div>
+                        </div>
+                        <div class="tl-item reveal">
+                            <div class="tl-dot"></div>
+                            <div class="tl-card">
+                                <h4>Camera-Ready Paper</h4><time>Jan 15, 2027</time>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Registrations -->
+                    <div class="dates-col dates-right">
+                        <div class="tl-item reveal">
+                            <div class="tl-dot gold"></div>
+                            <div class="tl-card gold">
+                                <h4>Early-Bird Registration</h4><time>Jan 25, 2027</time>
+                            </div>
+                        </div>
+                        <div class="tl-item reveal">
+                            <div class="tl-dot"></div>
+                            <div class="tl-card">
+                                <h4>Standard Registration</h4><time>Feb 15, 2027</time>
+                            </div>
+                        </div>
+                        <div class="tl-item reveal">
+                            <div class="tl-dot late"></div>
+                            <div class="tl-card">
+                                <h4>Late Registration</h4><time>After Feb 15, 2027</time>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Center: Conference Event -->
+                <div class="dates-center reveal">
+                    <div class="tl-card event">
+                        <h4><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="vertical-align:-3px;margin-right:6px">
+                                <path d="M6 3h12l4 6-10 9L2 9l4-6z" />
+                                <path d="M2 9h20M12 3v18" />
+                            </svg> Conference</h4><time>Feb 27–28, 2027</time>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section section-alt" id="about">
+        <div class="container">
+            <div class="section-head reveal">
+                <h2><span class="grad-text">About</span></h2>
+            </div>
+            <div class="tabs reveal">
+                <div class="tab-list" id="aboutTabs">
+                    <button class="tab active" data-tab="conference">Conference</button>
+                    <button class="tab" data-tab="cdpe">CDPE</button>
+                    <button class="tab" data-tab="crid">CRID</button>
+                    <button class="tab" data-tab="fsh">FSH</button>
+                    <button class="tab" data-tab="pu">Poornima University</button>
+                    <button class="tab" data-tab="jaipur">Jaipur</button>
+                    <button class="tab" data-tab="rajasthan">Rajasthan</button>
+                </div>
+                <div class="tab-panel active" id="conference">
+                    <p><strong>SINSET 2027</strong> is an international multidisciplinary conference bringing together
+                        researchers, academicians, scientists, engineers, industry professionals, policymakers, and
+                        innovators to address emerging challenges and opportunities in sustainable science and
+                        technology.</p>
+                    <p>The conference provides a platform for cutting-edge research and practical solutions across
+                        climate change, environmental sustainability, clean and renewable energy, resource management,
+                        advanced materials, smart technologies, resilient infrastructure, and responsible technological
+                        development — directly contributing to the UN Sustainable Development Goals (SDGs).</p>
+                    <p class="tab-quote">"Join us on 27–28 February 2027 at Poornima University, Jaipur, to share
+                        transformative ideas and contribute to intelligent, resilient, and sustainable solutions."</p>
+                </div>
+                <div class="tab-panel" id="cdpe">
+                    <p>The <strong>Centre for the Development of Physics Education (CDPE)</strong> was established in
+                        May 1978 by the University Grants Commission. This was a sequel to excellent developmental work
+                        done by the Department of Physics during the University Leadership Programme (1971-78).</p>
+                    <p>The activities of the Centre are (i) development of new Physics experiments and literature, (ii)
+                        assisting other institutions under contact programme, (iii) fabrication and supply of equipment
+                        developed by it to academic/research institutions on no-profit and no-loss basis, (iv)
+                        development of teaching aids in the form of Computer and Audio Visual Programmes. The Centre
+                        has developed over 100 experiments and supplied Physics equipments fabricated at the Centre to
+                        many Universities and Institutions in India and abroad. These equipment are also being used in
+                        training programmes sponsored by ICTP, Italy, at the University of Dar-es-salaam, Tanzania,
+                        University of Maiduguri, Nigeria, and the University of Zimbabwe, Harare. The Coupled Oscillator
+                        was awarded First Prize at an International Competition.</p>
+                    <p>The Centre has been supporting research groups in the Physics Department for fabrication of
+                        equipment and extending IT expertise for examination reforms and academic development. The
+                        Centre
+                        conducts workshops, exhibitions and training programmes for college teachers and also school
+                        children through INSPIRE Programme of DST, Govt. of India.</p>
+                </div>
+                <div class="tab-panel" id="crid">
+                    <p>The <strong>Centre for Research, Instrumentation &amp; Development (CRID)</strong>, established
+                        in 2019, is a centralized research facility at Poornima University bringing advanced analytical,
+                        characterization, synthesis, and fabrication capabilities under one roof.</p>
+                    <p>Facilities include Atomic Absorption Spectroscopy (AAS), UV–Visible Spectrophotometry, thin-film
+                        deposition, Kjeldahl analysis, and 3D printing. Its open-access model allows external
+                        researchers and industry professionals to access facilities, fostering academia–industry
+                        collaboration in photovoltaics, nanotechnology, materials science, and renewable energy.</p>
+                </div>
+                <div class="tab-panel" id="fsh">
+                    <p>The <strong>Faculty of Science and Humanities (FSH)</strong> is committed to excellence in
+                        education, research, innovation, and holistic student development. It offers multidisciplinary
+                        programmes including B.Sc. PCM, B.Sc. ECC, B.Sc. Forensic Science, B.A., M.A. (Yoga), and Ph.D.
+                        programmes.</p>
+                    <p>FSH promotes outcome-based education through well-equipped laboratories, MOOCs, certification
+                        courses, and a structured mentor–mentee system, with access to DELNET, IEEE, J-Gate, Scopus and
+                        CRID facilities — nurturing scientific curiosity and professional competence.</p>
+                </div>
+                <div class="tab-panel" id="pu">
+                    <p><strong>Poornima University (PU)</strong> is a state private university in Jaipur, India,
+                        established in 2012 by an act of the Rajasthan legislature, recognized by UGC under Section 2(f)
+                        and 12(B) with the right to confer degrees per Section 22(1) of the UGC Act, 1956.</p>
+                    <p>With <strong>8000+ students</strong> across nine faculties and fourteen departments of UG/PG and
+                        PhD programs — Management, Engineering, Computer Applications, Sciences, Architecture, Design,
+                        Public Health, and Hotel Management — PU builds a knowledge-based society with scientific temper
+                        and team spirit.</p>
+                </div>
+                <div class="tab-panel" id="jaipur">
+                    <p><strong>Jaipur — the Pink City of India</strong> — is among the fifty global outsourcing cities
+                        and the 10th largest city of India. Founded on 18th November 1727 by Maharaja Sawai Jai Singh
+                        II, ruler of Amber.</p>
+                    <p>The city is colourful with organized architecture unveiling royal culture, arts, and traditions
+                        as the heritage of Rajasthan — a destination admired by tourists from across the globe.</p>
+                    <p>Jaipur is home to magnificent forts and palaces — the Amber Fort, Hawa Mahal, City Palace, and
+                        Jantar Mantar — each standing as a timeless testament to the grandeur of Rajput architecture and
+                        the vision of its royal founders.</p>
+                    <p>The city's iconic pink-painted walls, ordered by Maharaja Ram Singh II in 1876 to welcome the
+                        Prince of Wales, have since become a symbol of Jaipur's warmth and hospitality — a colour that
+                        breathes life into every street and bazaar.</p>
+                    <p>From the bustling lanes of Johari Bazaar adorned with precious gemstones to the vibrant
+                        handcrafted textiles of Bapu Bazaar, Jaipur's markets are a celebration of Rajasthan's rich
+                        artisanal heritage — block printing, blue pottery, and lac jewellery passed down through
+                        generations.</p>
+                    <p>A city of festivals, flavours, and folklore — Jaipur stands today as a proud member of UNESCO's
+                        Creative Cities Network, where ancient traditions and modern ambitions walk hand in hand beneath
+                        the golden Rajasthani sun.</p>
+                </div>
+                <div class="tab-panel" id="rajasthan">
+                    <p><strong>Rajasthan</strong>, the largest state of India by area (3,42,239 sq km), encompasses most
+                        of the Great Indian Desert (Thar Desert), bordering Pakistan, Gujarat, Madhya Pradesh, Uttar
+                        Pradesh, Haryana and Punjab.</p>
+                    <p>The glory of the state is retained by its majestic palaces, forts, monuments, vibrant culture,
+                        and rich heritage which draw innumerable tourists from across the globe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CALL FOR PAPERS ============ -->
+    <section class="section" id="call-for-papers">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="eyebrow">Call for Papers</span>
+                <h2>Research <span class="grad-text">Tracks</span></h2>
+                <p>Submit your original, unpublished work in one of six thematic tracks exploring intelligent
+                    technologies for global sustainability.</p>
+            </div>
+            <div class="tracks-grid">
+                <article class="track-card reveal">
+                    <div class="track-icon" style="--i:#4f8cff"><svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" width="24" height="24">
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M12 1v4M12 19v4M4.2 4.2l2.8 2.8M17 17l2.8 2.8M1 12h4M19 12h4M4.2 19.8L7 17M17 7l2.8-2.8" />
+                        </svg></div>
+                    <h3>Track 1 <em>Sustainable Natural Sciences, Advanced Materials and Nanotechnology</em></h3>
+                    <ul>
+                        <li>Physics and applied physics</li>
+                        <li>Chemistry and applied chemistry</li>
+                        <li>Mathematics and applied mathematics</li>
+                        <li>Material science and engineering</li>
+                        <li>Advanced and functional materials</li>
+                        <li>Nanoscience and nanotechnology</li>
+                        <li>Condensed matter and computational materials science</li>
+                        <li>Geophysics and earth sciences</li>
+                        <li>Sustainable environmental sciences</li>
+                        <li>Climate science and climate action</li>
+                        <li>Atmospheric and environmental modelling</li>
+                        <li>Computational and interdisciplinary natural sciences</li>
+                        <li>Sustainable chemical processes and green chemistry</li>
+                        <li>Materials for energy, environment and healthcare</li>
+                    </ul>
+                </article>
+                <article class="track-card reveal">
+                    <div class="track-icon" style="--i:#2dd4a7"><svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" width="24" height="24">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <path d="M9 12l2 2 4-4" />
+                        </svg></div>
+                    <h3>Track 2 <em>Life Sciences, Biotechnology, Food and Sustainable Health</em></h3>
+                    <ul>
+                        <li>Biotechnology</li>
+                        <li>Molecular and cellular sciences</li>
+                        <li>Microbiology</li>
+                        <li>Bioinformatics</li>
+                        <li>Food science and food technology</li>
+                        <li>Sustainable food processing</li>
+                        <li>Agricultural and food biotechnology</li>
+                        <li>Nutrition and nutraceuticals</li>
+                        <li>Public health</li>
+                        <li>Sustainable healthcare</li>
+                        <li>Biomedical sciences and technologies</li>
+                        <li>Health informatics</li>
+                        <li>Environmental health</li>
+                        <li>Epidemiology and health systems</li>
+                        <li>One Health</li>
+                        <li>Bioprocessing and bio-based technologies</li>
+                    </ul>
+                </article>
+                <article class="track-card reveal">
+                    <div class="track-icon" style="--i:#f5b942"><svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" width="24" height="24">
+                            <path d="M2 20h20M5 20V9l7-5 7 5v11M9 20v-6h6v6" />
+                        </svg></div>
+                    <h3>Track 3 <em>Sustainable Engineering, Smart Manufacturing and Industry 5.0</em></h3>
+                    <ul>
+                        <li>Mechanical engineering</li>
+                        <li>Civil engineering</li>
+                        <li>Electrical engineering</li>
+                        <li>Electronics and communication engineering</li>
+                        <li>Mechatronics</li>
+                        <li>Robotics and automation</li>
+                        <li>Manufacturing engineering</li>
+                        <li>Industrial engineering</li>
+                        <li>Advanced engineering materials</li>
+                        <li>Smart manufacturing</li>
+                        <li>Industry 4.0 and Industry 5.0</li>
+                        <li>Digital manufacturing</li>
+                        <li>Additive manufacturing and 3D printing</li>
+                        <li>Intelligent machines and autonomous systems</li>
+                        <li>Sustainable design and engineering</li>
+                        <li>Infrastructure engineering</li>
+                        <li>Resilient and sustainable infrastructure</li>
+                    </ul>
+                </article>
+                <article class="track-card reveal">
+                    <div class="track-icon" style="--i:#a78bfa"><svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" width="24" height="24">
+                            <rect x="4" y="4" width="16" height="16" rx="2" />
+                            <path d="M9 9h6v6H9z" />
+                            <path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3" />
+                        </svg></div>
+                    <h3>Track 4 <em>Artificial Intelligence, Computing, Data Science and Digital Technologies</em></h3>
+                    <ul>
+                        <li>Computer science</li>
+                        <li>Computer science applications</li>
+                        <li>Artificial intelligence</li>
+                        <li>Machine learning and deep learning</li>
+                        <li>Data science and big data analytics</li>
+                        <li>Computer vision</li>
+                        <li>Natural language processing</li>
+                        <li>Internet of Things (IoT)</li>
+                        <li>Edge and cloud computing</li>
+                        <li>High-performance computing</li>
+                        <li>Quantum computing</li>
+                        <li>Cybersecurity and cyber-physical security</li>
+                        <li>Blockchain and distributed systems</li>
+                        <li>Digital twins</li>
+                        <li>Software engineering</li>
+                        <li>Intelligent information systems</li>
+                        <li>AI for science, engineering, healthcare and sustainability</li>
+                    </ul>
+                </article>
+                <article class="track-card reveal">
+                    <div class="track-icon" style="--i:#ff8a4f"><svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" width="24" height="24">
+                            <path d="M12 2c3 3.5 5 6.5 5 10a5 5 0 1 1-10 0c0-3.5 2-6.5 5-10z" />
+                            <path d="M12 22v-6" />
+                        </svg></div>
+                    <h3>Track 5 <em>Renewable Energy, Energy Systems and Sustainable Infrastructure</em></h3>
+                    <ul>
+                        <li>Renewable energy technologies</li>
+                        <li>Solar energy and photovoltaics</li>
+                        <li>Wind, hydro and geothermal energy</li>
+                        <li>Bioenergy and biofuels</li>
+                        <li>Hydrogen and fuel-cell technologies</li>
+                        <li>Energy storage</li>
+                        <li>Batteries and supercapacitors</li>
+                        <li>Smart grids</li>
+                        <li>Power systems</li>
+                        <li>Energy conversion and management</li>
+                        <li>Energy-efficient technologies</li>
+                        <li>Sustainable buildings and infrastructure</li>
+                        <li>Integrated energy systems</li>
+                        <li>Energy modelling and optimization</li>
+                        <li>Energy policy and economics</li>
+                        <li>Energy security</li>
+                        <li>Decarbonization and net-zero technologies</li>
+                        <li>Climate-resilient energy systems</li>
+                    </ul>
+                </article>
+                <article class="track-card reveal">
+                    <div class="track-icon" style="--i:#38bdf8"><svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" width="24" height="24">
+                            <path
+                                d="M20 7h-9V5a2 2 0 0 0-4 0v2H5a2 2 0 0 0-2 2v3h18zM3 12v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7z" />
+                        </svg></div>
+                    <h3>Track 6 <em>Sustainability, Innovation, Policy and Interdisciplinary Solutions</em></h3>
+                    <ul>
+                        <li>Sustainable development</li>
+                        <li>Circular economy</li>
+                        <li>Resource efficiency</li>
+                        <li>Waste management and waste-to-energy</li>
+                        <li>Water and wastewater management</li>
+                        <li>Sustainable cities and communities</li>
+                        <li>Climate-resilient development</li>
+                        <li>Environmental management</li>
+                        <li>Sustainable business and industry</li>
+                        <li>Innovation and technology management</li>
+                        <li>Innovation policies</li>
+                        <li>Science, technology and innovation policy</li>
+                        <li>Technology transfer and commercialization</li>
+                        <li>Entrepreneurship and start-ups</li>
+                        <li>Sustainable finance and green investment</li>
+                        <li>ESG and responsible innovation</li>
+                        <li>Sustainable supply chains</li>
+                        <li>Social and economic dimensions of sustainability</li>
+                        <li>SDGs and sustainability assessment</li>
+                        <li>Policy, governance and regulatory frameworks</li>
+                        <li>Interdisciplinary and transdisciplinary sustainability research</li>
+                    </ul>
+                </article>
+            </div>
+            <div class="awards-row reveal">
+                <div class="award"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="6" />
+                            <path d="M15.5 13 17 22l-5-3-5 3 1.5-9" />
+                        </svg></span>
+                    <div>
+                        <h4>Best Research Paper Award</h4>
+                        <p>Awarded for overall research excellence per session.</p>
+                    </div>
+                </div>
+                <div class="award"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="2" width="6" height="12" rx="3" />
+                            <path d="M5 10a7 7 0 0 0 14 0M12 17v4M9 21h6" />
+                        </svg></span>
+                    <div>
+                        <h4>Best Oral Presentation Award</h4>
+                        <p>Awarded for presentation excellence per session.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SPEAKERS ============ -->
+    <section class="section section-alt" id="speakers">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="eyebrow">Keynote Speaker</span>
+                <h2>Distinguished <span class="grad-text">Voices</span></h2>
+                <p>Learn from leaders in academia, research and industry.</p>
+            </div>
+            <div class="speaker-grid">
+                <div class="speaker-card reveal">
+                    <div class="speaker-avatar">
+                        <div class="avatar-ring">
+                            <img src="https://scholar.googleusercontent.com/citations?view_op=view_photo&amp;user=xg7hyUIAAAAJ&amp;citpid=17"
+                                alt="Dr. Nazrul Hsan" />
+                        </div>
+                    </div>
+                    <h3>Dr. Nazrul Hsan</h3>
+                    <p class="speaker-aff">Department of Materials Science and Engineering<br>Konkuk University, Seoul
+                        05029, Republic of Korea</p>
+                </div>
+                <div class="speaker-card reveal">
+                    <div class="speaker-avatar">
+                        <div class="avatar-ring">
+                            <img src="https://dl.dropboxusercontent.com/scl/fi/1ql73gln4mmjpuda5dpn8/M-Pal-1-Mrinal-Pal.jpeg?rlkey=v4ttlzep2ii82poqessdei9sg"
+                                alt="MRINAL PAL" />
+                        </div>
+                    </div>
+                    <h3>MRINAL PAL</h3>
+                    <p class="speaker-aff">Department of MARETIALS SCIENCE and FORMER - CHIEF SCIENTIST<br>CSIR -
+                        CENTRAL GLASS AND CERAMIC RESEARCH INSTITUTE, KOLKATA</p>
+                </div>
+                <div class="speaker-card reveal">
+                    <div class="speaker-avatar">
+                        <div class="avatar-ring">
+                            <img src="https://dl.dropboxusercontent.com/scl/fi/abtp37ur5ynmiyd7kq1t6/Passport-Amol-Pawar.jpg?rlkey=zrm7os9inxkzk2le6114b6uyn"
+                                alt="Dr Amol D pawar" />
+                        </div>
+                    </div>
+                    <h3>Dr Amol D pawar</h3>
+                    <p class="speaker-aff">Department of School of Construction and Associate Professor <br>NICMAR
+                        University, Pune </p>
+                </div>
+                <div class="speaker-card reveal">
+                    <div class="speaker-avatar">
+                        <div class="avatar-ring">
+                            <img src="https://dl.dropboxusercontent.com/scl/fi/cptho843ei40lw3czzemn/Passport_NEW-Dr.-Ashootosh-Mandpe.jpeg?rlkey=wu73qgbugeym1001wgvyznwvd"
+                                alt="Dr. Ashootosh Mandpe" />
+                        </div>
+                    </div>
+                    <h3>Dr. Ashootosh Mandpe</h3>
+                    <p class="speaker-aff">Department of Civil Engineering and Assistant Professor<br>Indian Institute
+                        of Technology Indore</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SUBMISSION ============ -->
+    <section class="section" id="submission">
+        <div class="container">
+            <div class="section-head reveal">
+                <h2>Submission</h2>
+                <p>Full-length papers only via Microsoft CMT.</p>
+            </div>
+            <div class="guide-grid">
+                <div class="guide-card reveal">
+                    <div class="g-num">01</div>
+                    <h4>Originality</h4>
+                    <p>Submissions must present original, unpublished work. Double-blind peer review process will be
+                        followed.</p>
+                </div>
+                <div class="guide-card reveal">
+                    <div class="g-num">02</div>
+                    <h4>Format &amp; Length</h4>
+                    <p>Papers must be written in clear English and be 6 to 10 pages in length. Prepare manuscripts in MS
+                        Word format.</p>
+                </div>
+                <div class="guide-card reveal">
+                    <div class="g-num">03</div>
+                    <h4>Structure</h4>
+                    <p>Title, Abstract (150-200 words), Keywords (5-6), Intro, Methodology, Results, Conclusion,
+                        References (APA/IEEE style).</p>
+                </div>
+                <div class="guide-card reveal">
+                    <div class="g-num">04</div>
+                    <h4>Plagiarism</h4>
+                    <p>Submissions will be screened using Turnitin. Similarity score must be less than 10% and AI score
+                        must be 0.</p>
+                </div>
+                <div class="guide-card reveal">
+                    <div class="g-num">05</div>
+                    <h4>Author Expectations & Attendance</h4>
+                    <p>At least one author must register and present the paper in person or virtually. Each presentation
+                        should be 10 minutes. No-show papers will not be considered for publication.</p>
+                </div>
+                <div class="guide-card reveal">
+                    <div class="g-num">06</div>
+                    <h4>Full-Length Only</h4>
+                    <p>Authors will receive notification from the conference once the technical programme committee has
+                        reviewed the manuscript. The committee will accept only full-length papers for review. Please
+                        note that only abstract will not be considered.</p>
+                </div>
+            </div>
+            <div class="submit-cta reveal" id="submit">
+                <h3>Ready to submit?</h3>
+                <p>Submit your full-length manuscript through the official conference portal.</p>
+                <a href="https://cmt3.research.microsoft.com/SINSET2027" target="_blank" rel="noopener"
+                    class="btn btn-primary btn-lg">Submit via CMT Portal <svg width="16" height="16" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                    </svg></a>
+                <small>The Microsoft CMT service was used for managing the peer-reviewing process for this conference.
+                    This service was provided for free by Microsoft and they bore all expenses, including costs for
+                    Azure cloud services as well as for software development and support.</small>
+            </div>
+            <div class="pub-strip reveal" id="publication-partners">
+                <span class="pub-label">Accepted papers submitted for publication in</span>
+                <div class="pub-logos">
+                    <img src="https://static.wixstatic.com/media/d447a4_ee654a8e26564442bcb87a1d842e0033~mv2.jpg/v1/fill/w_848,h_334,al_c/d447a4_ee654a8e26564442bcb87a1d842e0033~mv2.jpg"
+                        alt="Publication Partners" class="pub-partner-img" />
+                    <div class="pub-logo scopus">Scopus-Indexed</div>
+                </div>
+                <small>* Publisher to be confirmed per track.</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ COLLABORATIONS / PARTNERS ============ -->
+    <section class="section" id="partners">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="eyebrow">Collaborations</span>
+                <h2>Our <span class="grad-text">Partners</span></h2>
+                <p>We are pleased to collaborate with organizations supporting innovation, research, technology and
+                    knowledge exchange.</p>
+            </div>
+
+            <div class="partner-group reveal">
+                <h3 class="cm-title">Technical Partners</h3>
+                <div class="partner-grid">
+                    <div class="partner-card"><strong>Technical Partner</strong><span>Coming Soon</span></div>
+                </div>
+            </div>
+
+            <div class="partner-group reveal">
+                <h3 class="cm-title">Industry Partners</h3>
+                <div class="partner-grid">
+                    <div class="partner-card"><strong>Industry Partner</strong><span>Partner 1</span></div>
+                    <div class="partner-card"><strong>Industry Partner</strong><span>Partner 2</span></div>
+                    <div class="partner-card"><strong>Industry Partner</strong><span>Partner 3</span></div>
+                </div>
+            </div>
+
+            <div class="partner-group reveal">
+                <h3 class="cm-title">Media Partners</h3>
+                <div class="partner-grid">
+                    <div class="partner-card"><strong>Media Partner</strong><span>Partner 1</span></div>
+                    <div class="partner-card"><strong>Media Partner</strong><span>Partner 2</span></div>
+                    <div class="partner-card"><strong>Media Partner</strong><span>Partner 3</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ REGISTRATION ============ -->
+    <section class="section section-dark" id="registrations">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="eyebrow">Registration</span>
+                <p>Choose your category. Early Bird ends <strong>Jan 25, 2027</strong>.</p>
+                <div class="currency-toggle reveal">
+                    <button class="cur-btn active" data-cur="inr">₹ INR</button>
+                    <button class="cur-btn" data-cur="usd">$ USD</button>
+                </div>
+            </div>
+
+            <div class="fee-note reveal"><span class="fee-tag indian">Indian &amp; SAARC Participants</span></div>
+            <div class="reg-table reveal" data-currency="inr">
+                <div class="rg-head">
+                    <div>Category</div>
+                    <div>Early Bird</div>
+                    <div>Standard</div>
+                    <div>Late</div>
+                </div>
+                <div class="rg-row">
+                    <div><strong>Scholars / Students</strong></div><span class="cell" data-inr="₹10,000"
+                        data-usd="$250">₹10,000</span><span class="cell" data-inr="₹10,500"
+                        data-usd="$300">₹10,500</span><span class="cell" data-inr="₹12,000"
+                        data-usd="$400">₹12,000</span>
+                </div>
+                <div class="rg-row">
+                    <div><strong>Postdoc / Faculty / Scientist</strong></div><span class="cell" data-inr="₹12,000"
+                        data-usd="$350">₹12,000</span><span class="cell" data-inr="₹12,500"
+                        data-usd="$400">₹12,500</span><span class="cell" data-inr="₹14,000"
+                        data-usd="$500">₹14,000</span>
+                </div>
+                <div class="rg-row">
+                    <div><strong>Industry Person</strong></div><span class="cell" data-inr="₹13,000"
+                        data-usd="$450">₹13,000</span><span class="cell" data-inr="₹13,500"
+                        data-usd="$500">₹13,500</span><span class="cell" data-inr="₹15,000"
+                        data-usd="$600">₹15,000</span>
+                </div>
+                <div class="rg-row">
+                    <div><strong>Attendees / Accompanying</strong></div><span class="cell" data-inr="₹1,000"
+                        data-usd="$50">₹1,000</span><span class="cell" data-inr="₹1,500"
+                        data-usd="$100">₹1,500</span><span class="cell" data-inr="₹2,500" data-usd="$200">₹2,500</span>
+                </div>
+            </div>
+
+            <div class="fee-note reveal"><span class="fee-tag foreign">Foreign Participants</span></div>
+            <div class="reg-table reveal" data-currency="usd">
+                <div class="rg-head">
+                    <div>Category</div>
+                    <div>Early Bird</div>
+                    <div>Standard</div>
+                    <div>Late</div>
+                </div>
+                <div class="rg-row">
+                    <div><strong>Scholars / Students</strong></div><span class="cell" data-usd="$250"
+                        data-inr="₹10,000">$250</span><span class="cell" data-usd="$300"
+                        data-inr="₹10,500">$300</span><span class="cell" data-usd="$400" data-inr="₹12,000">$400</span>
+                </div>
+                <div class="rg-row">
+                    <div><strong>Postdoc / Faculty / Scientist</strong></div><span class="cell" data-usd="$350"
+                        data-inr="₹12,000">$350</span><span class="cell" data-usd="$400"
+                        data-inr="₹12,500">$400</span><span class="cell" data-usd="$500" data-inr="₹14,000">$500</span>
+                </div>
+                <div class="rg-row">
+                    <div><strong>Industry Person</strong></div><span class="cell" data-usd="$450"
+                        data-inr="₹13,000">$450</span><span class="cell" data-usd="$500"
+                        data-inr="₹13,500">$500</span><span class="cell" data-usd="$600" data-inr="₹15,000">$600</span>
+                </div>
+                <div class="rg-row">
+                    <div><strong>Attendees / Accompanying</strong></div><span class="cell" data-usd="$50"
+                        data-inr="₹1,000">$50</span><span class="cell" data-usd="$100"
+                        data-inr="₹1,500">$100</span><span class="cell" data-usd="$200" data-inr="₹2,500">$200</span>
+                </div>
+            </div>
+
+            <div class="bank-wrap two-col reveal">
+                <div class="bank-card">
+                    <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M3 21h18M4 9l8-6 8 6M5 9v9M9 9v9M15 9v9M19 9v9M3 18h18" />
+                        </svg> Payment — Bank Account</h4>
+                    <table class="bank-table">
+                        <tr>
+                            <td>Account Name</td>
+                            <td>Poornima University Part Two</td>
+                        </tr>
+                        <tr>
+                            <td>Account Number</td>
+                            <td>50200067803850</td>
+                        </tr>
+                        <tr>
+                            <td>Bank Name</td>
+                            <td>HDFC Bank Ltd.</td>
+                        </tr>
+                        <tr>
+                            <td>IFSC Code</td>
+                            <td>HDFC0003873</td>
+                        </tr>
+                        <tr>
+                            <td>Swift Code</td>
+                            <td>HDFCINBB</td>
+                        </tr>
+                        <tr>
+                            <td>MICR / Bank Code</td>
+                            <td>302240028 / 003873</td>
+                        </tr>
+                        <tr>
+                            <td>Branch</td>
+                            <td>F129, RIICO Industrial Area, Ramchandrapura, Sitapura, Jaipur — 302022</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="bank-card">
+                    <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" />
+                            <path d="M16 2v4M8 2v4M3 10h18" />
+                        </svg> Registration Windows</h4>
+                    <div class="reg-window"><span class="rw-date">until Jan 25, 2027</span>
+                        <h5>Early Bird Registration</h5>
+                        <p>Best rates — limited period. Register early to save.</p>
+                    </div>
+                    <div class="reg-window"><span class="rw-date">until Feb 15, 2027</span>
+                        <h5>Standard Registration</h5>
+                        <p>Standard fees apply for all categories.</p>
+                    </div>
+                    <div class="reg-window warn"><span class="rw-date">after Feb 15, 2027</span>
+                        <h5>Late Registration</h5>
+                        <p>Higher late fees apply — avoid delays.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ COMMITTEE ============ -->
+    <section class="section" id="committee">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="eyebrow">Committee</span>
+                <h2>Meet The <span class="grad-text">Team</span></h2>
+                <p>The people behind SINSET 2027 — leadership, organisation and advisory board.</p>
+            </div>
+
+            <div class="cm-group reveal">
+                <h3 class="cm-title">Chief Patrons</h3>
+                <div class="cards-grid">
+                    <div class="person-card">
+                        <div class="p-avatar"><img
+                                src="https://poornima.edu.in/assets/images/about/bom/Shashikant%20Sir.webp"
+                                alt="Ar. Shashikant Singhi"
+                                style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+                        <h4>Ar. Shashikant Singhi</h4>
+                        <p>Chairperson, Poornima University</p>
+                    </div>
+                    <div class="person-card">
+                        <div class="p-avatar"><img src="https://poornima.edu.in/assets/images/about/bom/suresh.webp"
+                                alt="Dr. Suresh Chandra Padhy"
+                                style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+                        <h4>Dr. Suresh Chandra Padhy</h4>
+                        <p>President, Poornima University</p>
+                    </div>
+                    <div class="person-card">
+                        <div class="p-avatar"><img
+                                src="https://poornima.edu.in/assets/images/about/bom/Rahul%20sir.webp"
+                                alt="Ar. Rahul Singhi"
+                                style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+                        <h4>Ar. Rahul Singhi</h4>
+                        <p>Director, Poornima University</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cm-group reveal">
+                <h3 class="cm-title">General Chairs</h3>
+                <div class="cards-grid">
+                    <div class="person-card">
+                        <div class="p-avatar gold"><img
+                                src="https://poornima.edu.in/assets/images/about/bom/Chandni.jpg"
+                                alt="Dr. Chandni Kripalani"
+                                style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+                        <h4>Dr. Chandni Kripalani</h4>
+                        <p>Chair · Pro-President (FSH, FPH, FMC &amp; PIHM)</p>
+                    </div>
+                    <div class="person-card">
+                        <div class="p-avatar"><img
+                                src="https://media.licdn.com/dms/image/v2/D4E03AQGKfGi-Ya2-jg/profile-displayphoto-crop_800_800/B4EaBWnUMTIgAI-/0/1788159544390?e=1795046400&v=beta&t=f2X7Gfk8cDSKcgrLYLgo6sg1M5Yf8sWsy1bMfwiJxX0"
+                                alt="Dr. Sama Jain" style="width:100%;height:100%;object-fit:cover;border-radius:50%">
+                        </div>
+                        <h4>Dr. Sama Jain</h4>
+                        <p>Co-Chair · Dean (FSH)</p>
+                    </div>
+                    <div class="person-card">
+                        <div class="p-avatar"><img
+                                src="https://media.licdn.com/dms/image/v2/D5603AQHkSLwuV3j8Dw/profile-displayphoto-crop_800_800/B56aAVaQqqGsAM-/0/1787065601551?e=1795046400&v=beta&t=aeENrhYXOVpgu8G_AzWmfMYvnExrKLCxrTd4dMAPQl8"
+                                alt="Dr. Udit Mamodiya"
+                                style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+                        <h4>Dr. Udit Mamodiya</h4>
+                        <p>Co-Chair · Associate Dean (R&amp;D)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cm-group reveal">
+                <h3 class="cm-title">Conveners</h3>
+                <div class="cards-grid">
+                    <div class="person-card">
+                        <div class="p-avatar"><img src="https://iili.io/n81VIoJ.png" alt="Dr. Peeyush Kumar Kamlesh"
+                                style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+                        <h4>Dr. Peeyush Kumar Kamlesh</h4>
+                        <p>Convener · Associate Professor (FSH)</p>
+                    </div>
+                    <div class="person-card">
+                        <div class="p-avatar"><img src="https://iili.io/n81rwJe.jpg" alt="Dr. Sarita Kumari"
+                                style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+                        <h4>Dr. Sarita Kumari</h4>
+                        <p>Convener · Associate Professor (FSH)</p>
+                    </div>
+                    <div class="person-card">
+                        <div class="p-avatar"><img src="https://iili.io/n81Mp99.jpg" alt="Dr. Rakesh Aggarwal"
+                                style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+                        <h4>Dr. Rakesh Aggarwal</h4>
+                        <p>Co-Convener · Associate Professor (FSH)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cm-group reveal">
+                <h3 class="cm-title">Organising Secretaries</h3>
+                <div class="cards-grid">
+                    <div class="person-card">
+                        <div class="p-avatar"><img
+                                src="https://media.licdn.com/dms/image/v2/C5603AQGTErwaUsNkxg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1643719223897?e=1795046400&v=beta&t=eIzOSPDHyoD-2Moy3zWytSHWy7EH5CZv8mwyhwuAivA"
+                                alt="Dr. Randhir Singh Baghel"
+                                style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+                        <h4>Dr. Randhir Singh Baghel</h4>
+                        <p>Organising Secretary · Associate Professor (FSH)</p>
+                    </div>
+                    <div class="person-card">
+                        <div class="p-avatar"><img src="https://iili.io/n818CZB.png" alt="Dr. Shrikant Verma"
+                                style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+                        <h4>Dr. Shrikant Verma</h4>
+                        <p>Organising Secretary · Associate Professor (FSH)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cm-group reveal">
+                <h3 class="cm-title">Track Chairs</h3>
+                <div class="cards-grid small">
+                    <div class="person-card sm">
+                        <h4>Dr. Seema Yadav</h4>
+                        <p>Associate Professor (FSH)</p>
+                    </div>
+                    <div class="person-card sm">
+                        <h4>Dr. Garima Singh</h4>
+                        <p>Associate Professor (FSH)</p>
+                    </div>
+                    <div class="person-card sm">
+                        <h4>Dr. Shiva Soni</h4>
+                        <p>Associate Professor (FSH)</p>
+                    </div>
+                    <div class="person-card sm">
+                        <h4>Dr. Vivek Kumar Jain</h4>
+                        <p>Associate Professor (FSH)</p>
+                    </div>
+                    <div class="person-card sm">
+                        <h4>Dr. Pramod Kumar Yadav</h4>
+                        <p>Associate Professor (FSH)</p>
+                    </div>
+                    <div class="person-card sm">
+                        <h4>Dr. Neha Vijay</h4>
+                        <p>Associate Professor (FSH)</p>
+                    </div>
+                    <div class="person-card sm">
+                        <h4>Dr. Vineet Sharma</h4>
+                        <p>Associate Professor (EED), PCE</p>
+                    </div>
+                </div>
+            </div>
+
+            <details class="cm-collapsible reveal" open>
+                <summary>All Committees <span class="chip-count">70+ members</span></summary>
+                <div class="cm-boxes">
+                    <div class="cm-box">
+                        <h4>Track Chairs</h4>
+                        <div class="cm-member"><strong>Dr. Seema Yadav</strong><span>Associate Professor (FSH) ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Dr. Garima Singh</strong><span>Associate Professor (FSH) ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Dr. Shiva Soni</strong><span>Associate Professor (FSH) · Poornima
+                                University</span></div>
+                        <div class="cm-member"><strong>Dr. Vivek Kumar Jain</strong><span>Associate Professor (FSH) ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Dr. Pramod Kumar Yadav</strong><span>Associate Professor (FSH) ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Dr. Neha Vijay</strong><span>Associate Professor (FSH) · Poornima
+                                University</span></div>
+                        <div class="cm-member"><strong>Dr. Vineet Sharma</strong><span>Associate Professor (EED) ·
+                                Poornima College of Engineering</span></div>
+                    </div>
+                    <div class="cm-box">
+                        <h4>Admin Support Committee</h4>
+                        <div class="cm-member"><strong>Dr. Devendra Somvanshi</strong><span>Registrar · Poornima
+                                University</span></div>
+                        <div class="cm-member"><strong>Dr. Ashwin Lata</strong><span>Director, Administration · Poornima
+                                University</span></div>
+                        <div class="cm-member"><strong>Dr. Mayank Sharma</strong><span>Associate Dean, IQAC · Poornima
+                                University</span></div>
+                        <div class="cm-member"><strong>Dr. Rakesh Kumar Gupta</strong><span>Dean, Student Welfare ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Dr. Naval Kishor Jain</strong><span>COE · Poornima
+                                University</span></div>
+                        <div class="cm-member"><strong>Dr. Swati Gokhru</strong><span>Dean, International Relations ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Dr. Anmol Chaturvedi</strong><span>Assistant Registrar · Poornima
+                                University</span></div>
+                    </div>
+                    <div class="cm-box">
+                        <h4>Organising Committee</h4>
+                        <div class="cm-member"><strong>Dr. Sunil Gupta</strong><span>Dean (R&amp;D) · Poornima
+                                University</span></div>
+                        <div class="cm-member"><strong>Dr. Divya Prakash</strong><span>Professor · Poornima College of
+                                Engineering</span></div>
+                        <div class="cm-member"><strong>Dr. Sangita Gupta</strong><span>Professor (FSH) · Poornima
+                                University</span></div>
+                        <div class="cm-member"><strong>Dr. Sunita Kumari</strong><span>Associate Professor (FSH) ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Dr. Shiva Soni</strong><span>Associate Professor (FSH) · Poornima
+                                University</span></div>
+                        <div class="cm-member"><strong>Dr. Soanl Jain</strong><span>Associate Professor (FSH) · Poornima
+                                University</span></div>
+                        <div class="cm-member"><strong>Dr. Poonam Sain</strong><span>Assistant Librarian · University
+                                Maharani
+                                College,
+                                Jaipur, India</span></div>
+                        <div class="cm-member"><strong>Dr. Vijay Dangi</strong><span>Assistant Professor (FSH) ·
+                                Poornima University</span></div>
+                    </div>
+                    <div class="cm-box">
+                        <h4>Review Committee</h4>
+                        <div class="cm-member"><strong>Dr. Pramod Kumar Yadav</strong><span>Associate Professor (FSH) ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Dr. Vivek Kumar Jain</strong><span>Associate Professor (FSH) ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Dr. Garima Singh</strong><span>Associate Professor (FSH) ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Dr. Mahima Kapoor</strong><span>Associate Professor (FSH) ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Dr. Neha Vijay</strong><span>Associate Professor (FSH) · Poornima
+                                University</span></div>
+                    </div>
+                    <div class="cm-box">
+                        <h4>Finance Committee</h4>
+                        <div class="cm-member"><strong>Dr. Rakesh Aggarwal</strong><span>Associate Professor (FSH) ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Dr. Soanl Jain</strong><span>Associate Professor (FSH) · Poornima
+                                University</span></div>
+                        <div class="cm-member"><strong>Ms. Poonam Sharma</strong><span>CFO · Poornima University</span>
+                        </div>
+                    </div>
+                    <div class="cm-box">
+                        <h4>Publicity and Promotion</h4>
+                        <div class="cm-member"><strong>Dr. Randhir Singh Baghel</strong><span>Associate Professor (FSH)
+                                · Poornima University</span></div>
+                        <div class="cm-member"><strong>Dr. Seema Yadav</strong><span>Associate Professor (FSH) ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Dr. Pallavi Singh</strong><span>Associate Professor (FPH) ·
+                                Poornima University</span></div>
+                    </div>
+                    <div class="cm-box">
+                        <h4>Sponsorship Committee</h4>
+                        <div class="cm-member"><strong>Dr. Ankita Dadhich Pran</strong><span>Professor (FSH) · Poornima
+                                University</span></div>
+                        <div class="cm-member"><strong>Dr. Peeyush Kumar Kamlesh</strong><span>Associate Professor (FSH)
+                                · Poornima University</span></div>
+                        <div class="cm-member"><strong>Dr. Vineet Sharma</strong><span>Associate Professor (EED) ·
+                                Poornima College of Engineering</span></div>
+                    </div>
+                    <div class="cm-box">
+                        <h4>Technical Programme Chairs</h4>
+                        <div class="cm-member"><strong>Dr. Swapan Banerjee</strong><span>Associate Professor (FPH) ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Dr. Prerna Srivastava</strong><span>Associate Professor (FSH) ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Dr. Priyanka Lodha</strong><span>Associate Professor (FSH) ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Mr. Raghav Arora</strong><span>Student · Poornima
+                                University</span></div>
+                    </div>
+                    <div class="cm-box">
+                        <h4>Hospitality Committee</h4>
+                        <div class="cm-member"><strong>Mr. Mukul Sharma</strong><span>Assistant Professor (FSH) ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Mr. Mahesh Kumar</strong><span>Technical Assistant (FSH) ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Mr. Hariom Tiwari</strong><span>Technical Officer (FSH) ·
+                                Poornima University</span></div>
+                    </div>
+                    <div class="cm-box">
+                        <h4>Media Coordination Committee</h4>
+                        <div class="cm-member"><strong>Dr. Shalini Saxena</strong><span>Professor (FSH) · Poornima
+                                University</span></div>
+                        <div class="cm-member"><strong>Dr. Kuldip Sharma</strong><span>Associate Professor (FSH) ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Ms. Surbhi Athiya</strong><span>Assistant Professor (FSH) ·
+                                Poornima University</span></div>
+                    </div>
+                    <div class="cm-box">
+                        <h4>Conference Web Admin</h4>
+                        <div class="cm-member"><strong>Dr. Randhir Singh Baghel</strong><span>Associate Professor (FSH)
+                                · Poornima University</span></div>
+                        <div class="cm-member"><strong>Ms. Rupam</strong><span>Student (FSH) · Poornima
+                                University</span></div>
+                        <div class="cm-member"><strong>Mr. Nishant</strong><span>Student (FSH) · Poornima
+                                University</span></div>
+                    </div>
+                    <div class="cm-box">
+                        <h4>Registration Committee</h4>
+                        <div class="cm-member"><strong>Dr. Garima Singh</strong><span>Associate Professor (FSH) ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Dr. Vijay Dangi</strong><span>Assistant Professor (FSH) ·
+                                Poornima University</span></div>
+                        <div class="cm-member"><strong>Ms. Yashasvi Surana</strong><span>Assistant Professor (FSH) ·
+                                Poornima University</span></div>
+                    </div>
+                    <div class="cm-box">
+                        <h4>Technical Network Administrator</h4>
+                        <div class="cm-member"><strong>Mr. Praful Kumar Dubey</strong><span>Network Administrator ·
+                                Poornima University</span></div>
+                    </div>
+                </div>
+            </details>
+
+            <div class="cm-group reveal advisory">
+                <h3 class="cm-title">Advisory Committee</h3>
+                <h4 class="cm-subtitle">International &amp; National Experts</h4>
+                <div class="advisory-grid">
+                    <div class="adv-chip"><strong>Dr. Nitendra Singh</strong><span>ITER Organization, France</span>
+                    </div>
+                    <div class="adv-chip"><strong>Prof. (Dr.) Y. K. Vijay</strong><span>CIST, IIS University, Jaipur,
+                            India</span>
+                    </div>
+                    <div class="adv-chip"><strong>Dr. Bruno Carpentieri</strong><span>Free University of Bozen-Bolzano,
+                            Italy</span></div>
+                    <div class="adv-chip"><strong>Dr. Kamlendra Awasthi</strong><span>MNIT, Jaipur, India</span></div>
+                    <div class="adv-chip"><strong>Dr. Mohamed A. Eltaher</strong><span>King Abdulaziz University, Saudi
+                            Arabia</span></div>
+                    <div class="adv-chip"><strong>Dr. Amar Johri</strong><span>College of Admin &amp; Financial
+                            Sciences, Saudi Arabia</span></div>
+                    <div class="adv-chip"><strong>Dr. Faiza Shujat</strong><span>Taibah University, Saudi Arabia</span>
+                    </div>
+                    <div class="adv-chip"><strong>Prof. (Dr.) Ajay Singh Verma</strong><span>Graphic Era Deemed to be
+                            University, Dehradun</span>
+                    </div>
+                    <div class="adv-chip"><strong>Dr. Sanman Jain Nellikar</strong><span>University of Stirling — RAK
+                            Campus, UAE</span></div>
+                    <div class="adv-chip"><strong>Dr. Monica Sharma</strong><span>Manipal Academy of Higher Education —
+                            Dubai, UAE</span></div>
+                    <div class="adv-chip"><strong>Dr. Ali Ben Ahmed</strong><span>University of Sfax, Tunisia</span>
+                    </div>
+                    <div class="adv-chip"><strong>Dr. Samah Al-Qaisi</strong><span>Palestinian Ministry of Education,
+                            Palestine</span></div>
+                    <div class="adv-chip"><strong>Dr. Nasr Al Din IDE</strong><span>University of Aleppo, Syria</span>
+                    </div>
+                    <div class="adv-chip"><strong>Dr. Nisheeth Kumar Prasad</strong><span>IIT Indore, India</span></div>
+                    <div class="adv-chip"><strong>Dr. Rakesh Sharma</strong><span>IIT Jodhpur, India</span></div>
+                    <div class="adv-chip"><strong>Dr. Abhineet Verma</strong><span>MNIT Jaipur, India</span></div>
+                    <div class="adv-chip"><strong>Dr. Om Ji Shukla</strong><span>NIT Patna, India</span></div>
+                    <div class="adv-chip"><strong>Dr. Arjun Singh Yadav</strong><span>University of Rajasthan, Jaipur,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Prof. (Dr.) Kanan Bala Sharma </strong><span>NIT Rourkela,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Dr. Chinmay Malik</strong><span>Central University of Rajasthan,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Dr. Akash Saxena</strong><span>Central University, Haryana,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Dr. Ashwani Kumar</strong><span>University of Allahabad, India</span>
+                    </div>
+                    <div class="adv-chip"><strong>Dr. Ghanshyam Sharma</strong><span>University of Kota, Kota,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Dr. Joy Mukherjee</strong><span>IIITDM Kurnool, India</span></div>
+                    <div class="adv-chip"><strong>Dr. Purnendra Kumar Verma</strong><span>Homi Bhabha National
+                            Institute, India</span></div>
+                    <div class="adv-chip"><strong>Dr. Akash Kumar</strong><span>NPCIL, India</span></div>
+                    <div class="adv-chip"><strong>Prof. (Dr.) Neelima Gupta</strong><span>University of Rajasthan,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Dr. Asha Jain</strong><span>University of Rajasthan, India</span>
+                    </div>
+                    <div class="adv-chip"><strong>Dr. Nisheeth C. Desai</strong><span>MK Bhavnagar University,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Dr. Vijaya Kamble</strong><span>RS Tukdoji Maharaj Nagpur University,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Dr. Dinesh Kumar</strong><span>GGS Indraprastha University,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Prof. Amar Kumar</strong><span>Dr. B. R. Ambedkar University,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Dr. Ankita P. Dadhich</strong><span>Poornima University, India</span>
+                    </div>
+                    <div class="adv-chip"><strong>Prof. (Dr.) Manoj Kumar Sharma</strong><span>University of Lucknow,
+                            Lucknow, India</span>
+                    </div>
+                    <div class="adv-chip"><strong>Dr. Ajay Kumar Pagare</strong><span>MS Ramaiah Institute of
+                            Management, India</span></div>
+                    <div class="adv-chip"><strong>Dr. Sourav Pal</strong><span>Ashoka University, India</span></div>
+                    <div class="adv-chip"><strong>Dr. Gajendra Kumar Saraswat</strong><span>Institute of Information
+                            Technology &amp; Management, India</span></div>
+                    <div class="adv-chip"><strong>Dr. Rajesh Singh Gurjar</strong><span>Banasthali University,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Dr. Pooja Jain</strong><span>SKIT, Jaipur, India</span></div>
+                    <div class="adv-chip"><strong>Dr. Ankush Tandon</strong><span>SKIT, India</span></div>
+                    <div class="adv-chip"><strong>Dr. Abhishek Gupta</strong><span>SKIT, Jaipur, India</span></div>
+                    <div class="adv-chip"><strong>Dr. Mirza Samiulla Beg</strong><span>Poornima University, India</span>
+                    </div>
+                    <div class="adv-chip"><strong>Dr. Sanjay Kumar Sinha</strong><span>Poornima University, India</span>
+                    </div>
+                    <div class="adv-chip"><strong>Dr. Lakshmi Narayan Mishra</strong><span>Vellore Institute of
+                            Technology, India</span></div>
+                    <div class="adv-chip"><strong>Dr. Dheeresh Soni</strong><span>VIT Bhopal University, India</span>
+                    </div>
+                    <div class="adv-chip"><strong>Dr. Narendra Khatri</strong><span>Manipal Institute of Technology,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Dr. Jitendra Singh Tamang</strong><span>Sikkim Manipal Institute of
+                            Technology, India</span></div>
+                    <div class="adv-chip"><strong>Prof. Sunita Kumawat</strong><span>Amity University Haryana,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Dr. Abhishek Kumar Tripathi</strong><span>Aditya University,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Dr. Krishan Dutt Sharma</strong><span>Chitkara University IET,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Dr. Prabhat Das</strong><span>Adamas University, India</span></div>
+                    <div class="adv-chip"><strong>Dr. Sunil Kumar Srivastava</strong><span>JECRC College, India</span>
+                    </div>
+                    <div class="adv-chip"><strong>Dr. Dibya Jyoti Bora</strong><span>The Assam Kaziranga University,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Dr. Brijeshkumar Y. Panchal</strong><span>SVIT, India</span></div>
+                    <div class="adv-chip"><strong>Dr. Law Kumar Singh</strong><span>IILM University Gurugram,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Dr. J Manoranjini</strong><span>Rajalakshmi Engineering College,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Dr. Jayanthiladevi</strong><span>Adichunchanagiri University,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Dr. H. Praveen</strong><span>KGiSL Institute of Technology,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Dr. Samyak Munot</strong><span>Iyns Research Foundation, India</span>
+                    </div>
+                    <div class="adv-chip"><strong>Dr. Amulya Nigam</strong><span>Nirma University, India</span></div>
+                    <div class="adv-chip"><strong>Dr. Palvi Sharma</strong><span>GLA University, India</span></div>
+                    <div class="adv-chip"><strong>Dr. Mra Rama Bhadekar</strong><span>Bharati Vidyapeeth University,
+                            India</span></div>
+                    <div class="adv-chip"><strong>Dr. Sachin Kumar</strong><span>KIET Deemed University, India</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SPONSORSHIP ============ -->
+    <section class="section section-alt" id="sponsorship">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="eyebrow">Sponsorship</span>
+                <h2>Partner With <span class="grad-text">SINSET 2027</span></h2>
+                <p>Showcase your brand to international researchers, academicians, and industry leaders.</p>
+            </div>
+            <div class="sponsor-grid">
+                <div class="sponsor-card reveal" style="--accent:#22d3ee">
+                    <span class="sp-tier">Bronze</span>
+                    <div class="sp-price">₹30,000</div>
+                    <ul>
+                        <li>One full conference registration</li>
+                        <li>One stall space for exhibits</li>
+                        <li>Logo on website &amp; company link</li>
+                        <li>Acknowledgment in opening address</li>
+                    </ul>
+                </div>
+                <div class="sponsor-card featured reveal" style="--accent:#f5b942">
+                    <span class="sp-badge">Most Popular</span>
+                    <span class="sp-tier">Gold</span>
+                    <div class="sp-price">₹45,000</div>
+                    <ul>
+                        <li>Two full conference registrations</li>
+                        <li>Two stall spaces for exhibits</li>
+                        <li>Logo on website &amp; company link</li>
+                        <li>Acknowledgment in opening address</li>
+                    </ul>
+                </div>
+                <div class="sponsor-card reveal" style="--accent:#c084fc">
+                    <span class="sp-tier">Diamond</span>
+                    <div class="sp-price">₹60,000</div>
+                    <ul>
+                        <li>Three full conference registrations</li>
+                        <li>Three stall spaces for exhibits</li>
+                        <li>Prominent logo on website &amp; linkage</li>
+                        <li>Special acknowledgment in opening address</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="center reveal"><a href="#organising-secretary" class="btn btn-primary btn-lg">Become a
+                    Sponsor</a></div>
+        </div>
+    </section>
+
+    <!-- ============ VENUE & CONTACT ============ -->
+    <section class="section" id="venue">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="eyebrow">Venue &amp; Contact</span>
+                <h2>See You In <span class="grad-text">Jaipur</span></h2>
+                <p>Well connected by air, train, and road.</p>
+            </div>
+            <div class="venue-grid">
+                <div class="venue-card reveal">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8">
+                        <path d="M3 21h18M5 21V7l7-4 7 4v14M8 9h1M15 9h1M8 13h1M15 13h1M8 17h8" />
+                    </svg>
+                    <h4>Poornima University</h4>
+                    <p>Plot No. IS-2027–2031, Ramchandrapura, P.O. Vidhani, Vatika Road, Sitapura, Jaipur, Rajasthan —
+                        303905</p>
+                    <p class="hint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px">
+                            <path d="M4 15V5h12M4 15l4 4h12l-4-4M4 15h12L20 5" />
+                        </svg> Railway station &amp; bus stand ≈ 25 km · <svg width="16" height="16" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" style="vertical-align:-3px">
+                            <path
+                                d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
+                        </svg> Jaipur International Airport nearby</p>
+                </div>
+                <div class="venue-card reveal" id="organising-secretary">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8">
+                        <path
+                            d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z" />
+                    </svg>
+                    <h4>Organising Secretaries</h4>
+                    <div class="contact-row">
+                        <div><strong>Dr. Randhir Singh Baghel</strong><a href="tel:+919827658770">+91 98276 58770</a>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <div><strong>Dr. Shrikant Verma</strong><a href="tel:+917611016103">+91 76110 16103</a></div>
+                    </div>
+                </div>
+                <div class="venue-card reveal">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8">
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                        <path d="M22 7l-10 6L2 7" />
+                    </svg>
+                    <h4>General Enquiries</h4>
+                    <p>Questions about paper submission, registration, or sponsorship — our organising secretaries are
+                        happy to help.</p>
+                    <a class="btn btn-primary-outline" href="mailto:sinset2027@poornima.edu.in">Email Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <h4>SINSET <em>2027</em></h4>
+                    <p>1st International Conference on Sustainable Innovations in Natural Sciences, Engineering and
+                        Technology.<br>Feb 27–28, 2027 · Poornima University, Jaipur · Hybrid Mode</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#call-for-papers">Call for Papers</a>
+                    <a href="#submission">Submission</a>
+                    <a href="#registrations">Registration</a>
+                    <a href="#committee">Committee</a>
+                    <a href="#sponsorship">Sponsorship</a>
+                    <a href="#venue">Venue</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2027 SINSET Conference · Poornima University. All rights reserved.</p>
+                <p>Organised by CRID &amp; Faculty of Science and Humanities, Poornima University, Jaipur</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ============ SINSET 2027 — Interactions ============
+
+        // Scroll progress + navbar state + active link
+        const progress = document.getElementById("scrollProgress");
+        const navbar = document.getElementById("navbar");
+        const sections = [...document.querySelectorAll("section[id]")];
+        const navAnchors = [...document.querySelectorAll(".nav-links a")];
+
+        function onScroll() {
+            const st = window.scrollY;
+            const h = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.width = (h > 0 ? (st / h) * 100 : 0) + "%";
+            navbar.classList.toggle("scrolled", st > 30);
+
+            let current = "home";
+            sections.forEach((s) => {
+                if (st >= s.offsetTop - 120) current = s.id;
+            });
+            navAnchors.forEach((a) => {
+                a.classList.toggle("active", a.getAttribute("href") === "#" + current);
+            });
+        }
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+
+        // Mobile menu
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("navLinks");
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("open");
+            navLinks.classList.toggle("open");
+            document.body.style.overflow = navLinks.classList.contains("open") ? "hidden" : "";
+        });
+        navLinks.querySelectorAll("a").forEach((a) =>
+            a.addEventListener("click", () => {
+                hamburger.classList.remove("open");
+                navLinks.classList.remove("open");
+                document.body.style.overflow = "";
+            })
+        );
+
+        // Reveal on scroll
+        const io = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((e) => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add("visible");
+                        io.unobserve(e.target);
+                    }
+                });
+            },
+            { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+        );
+        document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+        // Stagger reveals within grids
+        document.querySelectorAll(".dates-col, .tracks-grid, .guide-grid, .cards-grid, .stats-grid, .sponsor-grid, .venue-grid, .advisory-grid").forEach((grid) => {
+            [...grid.children].forEach((child, i) => {
+                child.style.transitionDelay = `${Math.min(i * 70, 500)}ms`;
+            });
+        });
+
+        // About tabs
+        const tabs = document.querySelectorAll("#aboutTabs .tab");
+        tabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+                tabs.forEach((t) => t.classList.remove("active"));
+                tab.classList.add("active");
+                document.querySelectorAll(".tab-panel").forEach((p) => p.classList.remove("active"));
+                document.getElementById(tab.dataset.tab).classList.add("active");
+            });
+        });
+
+        // Currency toggle
+        const curBtns = document.querySelectorAll(".cur-btn");
+        const tables = document.querySelectorAll(".reg-table");
+        function applyCurrency(cur) {
+            curBtns.forEach((b) => b.classList.toggle("active", b.dataset.cur === cur));
+            tables.forEach((table) => {
+                const show = table.dataset.currency === cur;
+                table.style.display = show ? "" : "none";
+                table.querySelectorAll(".cell").forEach((c) => (c.textContent = c.dataset[cur]));
+            });
+        }
+        curBtns.forEach((b) => b.addEventListener("click", () => applyCurrency(b.dataset.cur)));
+        applyCurrency("inr");
+        tables.forEach((table) => {
+            const show = table.dataset.currency === "inr";
+            table.style.display = show ? "" : "none";
+        });
+
+        // Animated stat counters
+        const statIo = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((e) => {
+                    if (!e.isIntersecting) return;
+                    statIo.unobserve(e.target);
+                    const el = e.target;
+                    const target = +el.dataset.count;
+                    const suffix = el.dataset.suffix || "";
+                    const dur = 1400;
+                    const start = performance.now();
+                    function tick(now) {
+                        const p = Math.min((now - start) / dur, 1);
+                        const eased = 1 - Math.pow(1 - p, 3);
+                        el.textContent = Math.round(target * eased) + suffix;
+                        if (p < 1) requestAnimationFrame(tick);
+                    }
+                    requestAnimationFrame(tick);
+                });
+            },
+            { threshold: 0.6 }
+        );
+        document.querySelectorAll(".stat strong[data-count]").forEach((el) => {
+            el.textContent = (0) + (el.dataset.suffix || "");
+            statIo.observe(el);
+        });
+
+        // Countdown to Feb 27, 2027 09:00 IST (03:30 UTC)
+        const target = new Date("2027-02-27T03:30:00Z").getTime();
+        const d = document.getElementById("cdDays"),
+            h = document.getElementById("cdHours"),
+            m = document.getElementById("cdMins"),
+            s = document.getElementById("cdSecs");
+        function pad(n) { return String(n).padStart(2, "0"); }
+        function updateCountdown() {
+            let diff = target - Date.now();
+            if (diff <= 0) {
+                document.getElementById("countdown").querySelector(".cd-timer").innerHTML =
+                    '<div class="cd-cell live"><span style="font-size:1.3rem;color:#7fefc8">● LIVE NOW</span></div>';
+                return;
+            }
+            const days = Math.floor(diff / 86400000);
+            const hrs = Math.floor((diff % 86400000) / 3600000);
+            const mins = Math.floor((diff % 3600000) / 60000);
+            const secs = Math.floor((diff % 60000) / 1000);
+            d.textContent = days;
+            h.textContent = pad(hrs);
+            m.textContent = pad(mins);
+            s.textContent = pad(secs);
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+    </script>
+</body>
+
+</html>
