@@ -1007,6 +1007,130 @@
             font-weight: 500;
         }
 
+        /* ---------- Tab Photo Strip ---------- */
+        .tab-photo-strip {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+            justify-items: center;
+            width: 100%;
+            margin: 32px 0 16px;
+            padding: 24px 16px;
+            box-sizing: border-box;
+        }
+
+        .tab-photo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            text-align: center;
+            width: 100%;
+            min-width: 0;
+        }
+
+        .tab-photo-circle {
+            width: clamp(140px, 20vw, 210px);
+            height: clamp(140px, 20vw, 210px);
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #fff;
+            outline: 3px solid var(--primary-2);
+            box-shadow: 0 10px 28px rgba(11, 31, 58, 0.14);
+            transition: all 0.35s var(--ease);
+            background: #fff;
+            aspect-ratio: 1 / 1;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .tab-photo-circle:hover {
+            transform: translateY(-6px) scale(1.04);
+            outline-color: var(--accent);
+            box-shadow: 0 16px 36px rgba(14, 122, 95, 0.28);
+        }
+
+        .tab-photo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s var(--ease);
+        }
+
+        .tab-photo-circle:hover img {
+            transform: scale(1.08);
+        }
+
+        .tab-photo-label {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--navy);
+            font-family: "Sora", sans-serif;
+            letter-spacing: -0.01em;
+            word-break: break-word;
+            max-width: 100%;
+        }
+
+        .tab-photo-sub {
+            font-size: 0.82rem;
+            color: var(--muted);
+            font-weight: 500;
+            margin-top: -6px;
+            word-break: break-word;
+            max-width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .tab-photo-strip {
+                gap: 12px;
+                padding: 16px 8px;
+                margin: 20px 0 12px;
+            }
+
+            .tab-photo-circle {
+                width: clamp(75px, 22vw, 120px);
+                height: clamp(75px, 22vw, 120px);
+                border-width: 3px;
+                outline-width: 2px;
+            }
+
+            .tab-photo-label {
+                font-size: 0.85rem;
+            }
+
+            .tab-photo-sub {
+                font-size: 0.72rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tab-panel {
+                padding: 22px 14px;
+            }
+
+            .tab-photo-strip {
+                gap: 8px;
+                padding: 12px 4px;
+            }
+
+            .tab-photo-circle {
+                width: clamp(64px, 21vw, 84px);
+                height: clamp(64px, 21vw, 84px);
+                border-width: 2px;
+                outline-width: 1.5px;
+            }
+
+            .tab-photo-label {
+                font-size: 0.76rem;
+            }
+
+            .tab-photo-sub {
+                font-size: 0.64rem;
+                margin-top: -4px;
+            }
+        }
+
         @keyframes fadeUp {
             from {
                 opacity: 0;
@@ -1117,37 +1241,176 @@
             color: var(--muted);
         }
 
+        /* ---------- Conference Awards ---------- */
         .awards-row {
             display: flex;
-            gap: 20px;
+            gap: 24px;
             justify-content: center;
-            margin-top: 44px;
+            margin-top: 48px;
             flex-wrap: wrap;
+            width: 100%;
         }
 
         .award {
+            position: relative;
             display: flex;
-            gap: 16px;
+            gap: 20px;
             align-items: center;
-            background: linear-gradient(135deg, #fffbeb, #fff);
-            border: 1px solid rgba(245, 185, 66, 0.4);
-            border-radius: var(--radius);
-            padding: 22px 28px;
-            max-width: 460px;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 24px 30px;
+            flex: 1 1 400px;
+            max-width: 540px;
+            box-shadow: 0 10px 30px rgba(11, 31, 58, 0.07), 0 2px 6px rgba(11, 31, 58, 0.04);
+            border: 1px solid rgba(11, 31, 58, 0.08);
+            overflow: hidden;
+            transition: all 0.35s var(--ease);
         }
 
-        .award span {
-            font-size: 2rem;
+        .award::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            transition: height 0.3s var(--ease);
+        }
+
+        .award.award-paper::before {
+            background: linear-gradient(90deg, #f59e0b, #fbbf24, #f5b942);
+        }
+
+        .award.award-presentation::before {
+            background: linear-gradient(90deg, #0e7a5f, #16a34a, #2dd4a7);
+        }
+
+        .award:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(11, 31, 58, 0.12), 0 4px 12px rgba(245, 185, 66, 0.15);
+        }
+
+        .award:hover::before {
+            height: 5px;
+        }
+
+        .award.award-paper:hover {
+            border-color: rgba(245, 158, 11, 0.45);
+        }
+
+        .award.award-presentation:hover {
+            border-color: rgba(14, 122, 95, 0.45);
+        }
+
+        .award-icon-box {
+            flex-shrink: 0;
+            width: 58px;
+            height: 58px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.35s var(--ease);
+            position: relative;
+        }
+
+        .award.award-paper .award-icon-box {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(251, 191, 36, 0.22));
+            color: #d97706;
+            border: 1.5px solid rgba(245, 158, 11, 0.3);
+            box-shadow: 0 6px 16px rgba(245, 158, 11, 0.16);
+        }
+
+        .award.award-presentation .award-icon-box {
+            background: linear-gradient(135deg, rgba(14, 122, 95, 0.12), rgba(45, 212, 167, 0.2));
+            color: #0e7a5f;
+            border: 1.5px solid rgba(14, 122, 95, 0.3);
+            box-shadow: 0 6px 16px rgba(14, 122, 95, 0.16);
+        }
+
+        .award:hover .award-icon-box {
+            transform: scale(1.1) rotate(-4deg);
+        }
+
+        .award-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .award-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.68rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 3px 10px;
+            border-radius: 20px;
+            width: fit-content;
+            margin-bottom: 2px;
+        }
+
+        .award-badge.gold {
+            background: rgba(245, 158, 11, 0.12);
+            color: #b45309;
+            border: 1px solid rgba(245, 158, 11, 0.25);
+        }
+
+        .award-badge.teal {
+            background: rgba(14, 122, 95, 0.1);
+            color: #0e7a5f;
+            border: 1px solid rgba(14, 122, 95, 0.22);
         }
 
         .award h4 {
-            font-size: 1rem;
-            margin-bottom: 4px;
+            font-family: "Sora", sans-serif;
+            font-size: 1.08rem;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: -0.01em;
+            margin: 0;
+            line-height: 1.35;
         }
 
         .award p {
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             color: var(--muted);
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        @media (max-width: 600px) {
+            .awards-row {
+                gap: 14px;
+                margin-top: 32px;
+            }
+
+            .award {
+                padding: 18px 20px;
+                gap: 16px;
+                border-radius: 16px;
+            }
+
+            .award-icon-box {
+                width: 48px;
+                height: 48px;
+                border-radius: 13px;
+            }
+
+            .award-icon-box svg {
+                width: 22px;
+                height: 22px;
+            }
+
+            .award h4 {
+                font-size: 0.98rem;
+            }
+
+            .award p {
+                font-size: 0.82rem;
+            }
         }
 
         /* ---------- Speakers ---------- */
@@ -1576,6 +1839,10 @@
             color: rgba(255, 255, 255, 0.8);
         }
 
+        .mobile-only-br {
+            display: none;
+        }
+
         .bank-table td:first-child {
             color: rgba(255, 255, 255, 0.55);
             width: 140px;
@@ -1713,13 +1980,13 @@
             place-items: center;
             border: 2px solid rgba(14, 122, 95, 0.18);
             overflow: hidden;
+            position: relative;
         }
 
         .p-avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: scale(1.12);
         }
 
         .p-avatar.gold {
@@ -2240,7 +2507,16 @@
             }
 
             .bank-table td:first-child {
-                width: 104px;
+                width: 90px;
+            }
+
+            .mobile-only-br {
+                display: block;
+            }
+
+            .bank-table td.acc-val {
+                white-space: nowrap;
+                font-size: clamp(0.72rem, 3.1vw, 0.86rem);
             }
 
             .tl-card {
@@ -2384,11 +2660,11 @@
             <nav class="nav-links" id="navLinks">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
-                <a href="#partners">Partners</a>
                 <a href="#call-for-papers">Call for Papers</a>
                 <a href="#submission">Submission</a>
                 <a href="#registrations">Registrations</a>
                 <a href="#committee">Committee</a>
+                <a href="#partners">Partners</a>
                 <a href="#sponsorship">Sponsorship</a>
                 <a href="#venue" class="nav-cta">Contact</a>
             </nav>
@@ -2455,14 +2731,14 @@
                         <rect x="3" y="4" width="18" height="18" rx="2" />
                         <path d="M16 2v4M8 2v4M3 10h18" />
                     </svg>
-                    <div><strong>February 27–28, 2027</strong><span>Two-day conference</span></div>
+                    <div><strong>February 27–28, 2027</strong></div>
                 </div>
                 <div class="meta-chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2">
                         <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
                         <circle cx="12" cy="10" r="3" />
                     </svg>
-                    <div><strong>Poornima University, Jaipur</strong><span>Online, worldwide</span></div>
+                    <div><strong>Poornima University, Jaipur</strong></div>
                 </div>
                 <a href="#publication-partners" class="meta-chip clickable" title="View Publication Partners">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2609,7 +2885,8 @@
                 <div class="tab-panel" id="crid">
                     <p>The <strong>Centre for Research, Instrumentation &amp; Development (CRID)</strong> at Poornima
                         University, Jaipur, was established in 2019 as a centralized research facility bringing advanced
-                        analytical, characterization, synthesis, and fabrication capabilities under one roof. It supports
+                        analytical, characterization, synthesis, and fabrication capabilities under one roof. It
+                        supports
                         interdisciplinary research in physical sciences, materials science, engineering, and allied
                         areas through facilities such as Atomic Absorption Spectroscopy (AAS), UV–Visible
                         Spectrophotometry, thin-film deposition, Kjeldahl analysis, and 3D printing, enabling both
@@ -2619,7 +2896,8 @@
                         open-access model allows external researchers and industry professionals to access the
                         facilities, fostering academia–industry collaboration and knowledge exchange. The centre has
                         supported research in areas including photovoltaics, nanotechnology, materials science, and
-                        renewable energy, while providing research exposure to undergraduate students and contributing to
+                        renewable energy, while providing research exposure to undergraduate students and contributing
+                        to
                         doctoral research. Through its emphasis on advanced instrumentation, innovation, collaborative
                         research, and technology development, CRID serves as a key research and innovation facility of
                         Poornima University.</p>
@@ -2661,6 +2939,7 @@
                         II, ruler of Amber.</p>
                     <p>The city is colourful with organized architecture unveiling royal culture, arts, and traditions
                         as the heritage of Rajasthan — a destination admired by tourists from across the globe.</p>
+
                     <p>Jaipur is home to magnificent forts and palaces — the Amber Fort, Hawa Mahal, City Palace, and
                         Jantar Mantar — each standing as a timeless testament to the grandeur of Rajput architecture and
                         the vision of its royal founders.</p>
@@ -2674,15 +2953,45 @@
                     <p>A city of festivals, flavours, and folklore — Jaipur stands today as a proud member of UNESCO's
                         Creative Cities Network, where ancient traditions and modern ambitions walk hand in hand beneath
                         the golden Rajasthani sun.</p>
+
+                    <div class="tab-photo-strip">
+                        <div class="tab-photo-item">
+                            <div class="tab-photo-circle">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtBF8qqCfSoygtXWiouQxbzcSIMXiEVpYMWj1-r0JXaA&s=10"
+                                    alt="City Palace, Jaipur" />
+                            </div>
+                            <span class="tab-photo-label">Jaipur</span>
+                            <span class="tab-photo-sub">CITY PALACE</span>
+                        </div>
+                        <div class="tab-photo-item">
+                            <div class="tab-photo-circle">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4FR5NwhPmGLSOMV18RHO5JaEEjgy6xbY70srkVpfNcg&s=10"
+                                    alt="Jal Mahal, Jaipur" />
+                            </div>
+                            <span class="tab-photo-label">Jaipur</span>
+                            <span class="tab-photo-sub">JAL MAHAL</span>
+                        </div>
+                        <div class="tab-photo-item">
+                            <div class="tab-photo-circle">
+                                <img src="https://s7ap1.scene7.com/is/image/incredibleindia/hawa-mahal-jaipur-rajasthan-city-1-hero?qlt=82&ts=1742200253577"
+                                    alt="Hawa Mahal, Jaipur" />
+                            </div>
+                            <span class="tab-photo-label">Jaipur</span>
+                            <span class="tab-photo-sub">HAWA MAHAL</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="tab-panel" id="rajasthan">
                     <p><strong>Rajasthan — the Land of Kings</strong> — is the largest state of India by area, spanning
                         a magnificent 3,42,239 sq km of diverse and dramatic landscape. It encompasses most of the
-                        vast, inhospitable Great Indian Desert — the Thar — whose golden sands stretch endlessly along an
-                        edge paralleling the Sutlej-Indus River valley, bordering the nation of Pakistan to the west.</p>
+                        vast, inhospitable Great Indian Desert — the Thar — whose golden sands stretch endlessly along
+                        an
+                        edge paralleling the Sutlej-Indus River valley, bordering the nation of Pakistan to the west.
+                    </p>
                     <p>The state shares its borders with Pakistan to the west, Gujarat to the southwest, Madhya Pradesh
                         to the southeast, Uttar Pradesh and Haryana to the northeast, and Punjab to the north — a land
                         standing at the crossroads of history, culture, and geography.</p>
+
                     <p>Beyond its formidable deserts lie rolling Aravalli ranges — among the oldest mountain ranges on
                         earth — lush wildlife sanctuaries, shimmering salt lakes, and ancient trade routes that once
                         carried caravans of merchants, poets, and warriors across the subcontinent.</p>
@@ -2694,6 +3003,33 @@
                         painting the sky with colour, its artisans crafting beauty from every thread and chisel — draws
                         innumerable travellers from across the globe, each leaving with a piece of Rajasthan forever
                         etched in their heart.</p>
+
+                    <div class="tab-photo-strip">
+                        <div class="tab-photo-item">
+                            <div class="tab-photo-circle">
+                                <img src="https://www.tourism.rajasthan.gov.in/content/dam/rajasthan-tourism/english/city/explore/Ana_Baradari01.jpg"
+                                    alt="Ana Sagar Baradari, Ajmer" />
+                            </div>
+                            <span class="tab-photo-label">Ajmer</span>
+                            <span class="tab-photo-sub">Ana Sagar Baradari</span>
+                        </div>
+                        <div class="tab-photo-item">
+                            <div class="tab-photo-circle">
+                                <img src="https://www.tourism.rajasthan.gov.in/content/dam/rajasthan-tourism/english/city/explore/Jain_Temple_Ranakpur-pali.jpg"
+                                    alt="Ranakpur Jain Temple, Pali" />
+                            </div>
+                            <span class="tab-photo-label">Pali</span>
+                            <span class="tab-photo-sub">Ranakpur Jain Temple</span>
+                        </div>
+                        <div class="tab-photo-item">
+                            <div class="tab-photo-circle">
+                                <img src="https://www.tourism.rajasthan.gov.in/content/dam/rajasthan-tourism/english/city/explore/topekhana01.jpg"
+                                    alt="Topekhana, Jalore" />
+                            </div>
+                            <span class="tab-photo-label">Jalore</span>
+                            <span class="tab-photo-sub">Topekhana</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2705,8 +3041,9 @@
             <div class="section-head reveal">
                 <span class="eyebrow">Call for Papers</span>
                 <h2>Research <span class="grad-text">Tracks</span></h2>
-                <p>Submit your original, unpublished work in one of six thematic tracks exploring intelligent
-                    technologies for global sustainability.</p>
+                <p>The theme of the 1st International Conference aims to explore the transformative power of intelligent
+                    technologies in addressing the global sustainability challenge. Researchers are invited to submit
+                    their original unpublished work in the following tracks:</p>
             </div>
             <div class="tracks-grid">
                 <article class="track-card reveal">
@@ -2875,24 +3212,32 @@
                 </article>
             </div>
             <div class="awards-row reveal">
-                <div class="award"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="award award-paper">
+                    <div class="award-icon-box">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="8" r="6" />
                             <path d="M15.5 13 17 22l-5-3-5 3 1.5-9" />
-                        </svg></span>
-                    <div>
+                        </svg>
+                    </div>
+                    <div class="award-content">
+                        <span class="award-badge gold">Excellence Award</span>
                         <h4>Best Research Paper Award</h4>
-                        <p>Awarded for overall research excellence per session.</p>
+                        <p>Awarded for overall research excellence per technical session.</p>
                     </div>
                 </div>
-                <div class="award"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="award award-presentation">
+                    <div class="award-icon-box">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="9" y="2" width="6" height="12" rx="3" />
                             <path d="M5 10a7 7 0 0 0 14 0M12 17v4M9 21h6" />
-                        </svg></span>
-                    <div>
+                        </svg>
+                    </div>
+                    <div class="award-content">
+                        <span class="award-badge teal">Presentation Award</span>
                         <h4>Best Oral Presentation Award</h4>
-                        <p>Awarded for presentation excellence per session.</p>
+                        <p>Awarded for presentation excellence and mastery per session.</p>
                     </div>
                 </div>
             </div>
@@ -2960,7 +3305,7 @@
     <section class="section" id="submission">
         <div class="container">
             <div class="section-head reveal">
-                <h2>Submission</h2>
+                <h2>Submission <span class="grad-text">Guidelines</span></h2>
                 <p>Full-length papers only via Microsoft CMT.</p>
             </div>
             <div class="guide-grid">
@@ -2996,7 +3341,7 @@
                 </div>
                 <div class="guide-card reveal">
                     <div class="g-num">06</div>
-                    <h4>Full-Length Only</h4>
+                    <h4>Full-Length Papers Only</h4>
                     <p>Authors will receive notification from the conference once the technical programme committee has
                         reviewed the manuscript. The committee will accept only full-length papers for review. Please
                         note that only abstract will not be considered.</p>
@@ -3015,49 +3360,11 @@
                     Azure cloud services as well as for software development and support.</small>
             </div>
             <div class="pub-strip reveal" id="publication-partners">
-                <span class="pub-label">Accepted papers submitted for publication in</span>
+                <span class="pub-label">Accepted papers will be submitted for publication in</span>
                 <div class="pub-logos">
                     <img src="https://static.wixstatic.com/media/d447a4_ee654a8e26564442bcb87a1d842e0033~mv2.jpg/v1/fill/w_848,h_334,al_c/d447a4_ee654a8e26564442bcb87a1d842e0033~mv2.jpg"
                         alt="Publication Partners" class="pub-partner-img" />
                     <div class="pub-logo scopus">Scopus-Indexed</div>
-                </div>
-                <small>* Publisher to be confirmed per track.</small>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============ COLLABORATIONS / PARTNERS ============ -->
-    <section class="section" id="partners">
-        <div class="container">
-            <div class="section-head reveal">
-                <span class="eyebrow">Collaborations</span>
-                <h2>Our <span class="grad-text">Partners</span></h2>
-                <p>We are pleased to collaborate with organizations supporting innovation, research, technology and
-                    knowledge exchange.</p>
-            </div>
-
-            <div class="partner-group reveal">
-                <h3 class="cm-title">Technical Partners</h3>
-                <div class="partner-grid">
-                    <div class="partner-card"><strong>Technical Partner</strong><span>Coming Soon</span></div>
-                </div>
-            </div>
-
-            <div class="partner-group reveal">
-                <h3 class="cm-title">Industry Partners</h3>
-                <div class="partner-grid">
-                    <div class="partner-card"><strong>Industry Partner</strong><span>Partner 1</span></div>
-                    <div class="partner-card"><strong>Industry Partner</strong><span>Partner 2</span></div>
-                    <div class="partner-card"><strong>Industry Partner</strong><span>Partner 3</span></div>
-                </div>
-            </div>
-
-            <div class="partner-group reveal">
-                <h3 class="cm-title">Media Partners</h3>
-                <div class="partner-grid">
-                    <div class="partner-card"><strong>Media Partner</strong><span>Partner 1</span></div>
-                    <div class="partner-card"><strong>Media Partner</strong><span>Partner 2</span></div>
-                    <div class="partner-card"><strong>Media Partner</strong><span>Partner 3</span></div>
                 </div>
             </div>
         </div>
@@ -3146,8 +3453,8 @@
                         </svg> Payment — Bank Account</h4>
                     <table class="bank-table">
                         <tr>
-                            <td>Account Name</td>
-                            <td>Poornima University Part Two</td>
+                            <td>Account<br class="mobile-only-br"> Name</td>
+                            <td class="acc-val">Poornima University Part Two</td>
                         </tr>
                         <tr>
                             <td>Account Number</td>
@@ -3271,7 +3578,8 @@
                 <div class="cards-grid">
                     <div class="person-card">
                         <div class="p-avatar"><img src="https://iili.io/n81VIoJ.png" alt="Dr. Peeyush Kumar Kamlesh"
-                                style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+                                style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:auto;height:96%;max-width:none;display:block">
+                        </div>
                         <h4>Dr. Peeyush Kumar Kamlesh</h4>
                         <p>Convener · Associate Professor (FSH)</p>
                     </div>
@@ -3534,8 +3842,8 @@
                     <div class="adv-chip"><strong>Dr. Om Ji Shukla</strong><span>NIT Patna, India</span></div>
                     <div class="adv-chip"><strong>Dr. Arjun Singh Yadav</strong><span>University of Rajasthan, Jaipur,
                             India</span></div>
-                    <div class="adv-chip"><strong>Prof. (Dr.) Kanan Bala Sharma </strong><span>NIT Rourkela,
-                            India</span></div>
+                    <div class="adv-chip"><strong>Prof. (Dr.) Kanan Bala Sharma </strong><span>University of Rajasthan,
+                            Jaipur, India</span></div>
                     <div class="adv-chip"><strong>Dr. Chinmay Malik</strong><span>Central University of Rajasthan,
                             India</span></div>
                     <div class="adv-chip"><strong>Dr. Akash Saxena</strong><span>Central University, Haryana,
@@ -3615,6 +3923,43 @@
                             India</span></div>
                     <div class="adv-chip"><strong>Dr. Sachin Kumar</strong><span>KIET Deemed University, India</span>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ COLLABORATIONS / PARTNERS ============ -->
+    <section class="section" id="partners">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="eyebrow">Collaborations</span>
+                <h2>Our <span class="grad-text">Partners</span></h2>
+                <p>We are pleased to collaborate with organizations supporting innovation, research, technology and
+                    knowledge exchange.</p>
+            </div>
+
+            <div class="partner-group reveal">
+                <h3 class="cm-title">Technical Partners</h3>
+                <div class="partner-grid">
+                    <div class="partner-card"><strong>Technical Partner</strong><span>Coming Soon</span></div>
+                </div>
+            </div>
+
+            <div class="partner-group reveal">
+                <h3 class="cm-title">Industry Partners</h3>
+                <div class="partner-grid">
+                    <div class="partner-card"><strong>Industry Partner</strong><span>Partner 1</span></div>
+                    <div class="partner-card"><strong>Industry Partner</strong><span>Partner 2</span></div>
+                    <div class="partner-card"><strong>Industry Partner</strong><span>Partner 3</span></div>
+                </div>
+            </div>
+
+            <div class="partner-group reveal">
+                <h3 class="cm-title">Media Partners</h3>
+                <div class="partner-grid">
+                    <div class="partner-card"><strong>Media Partner</strong><span>Partner 1</span></div>
+                    <div class="partner-card"><strong>Media Partner</strong><span>Partner 2</span></div>
+                    <div class="partner-card"><strong>Media Partner</strong><span>Partner 3</span></div>
                 </div>
             </div>
         </div>
@@ -3738,6 +4083,7 @@
                     <a href="#submission">Submission</a>
                     <a href="#registrations">Registration</a>
                     <a href="#committee">Committee</a>
+                    <a href="#partners">Partners</a>
                     <a href="#sponsorship">Sponsorship</a>
                     <a href="#venue">Venue</a>
                 </div>
