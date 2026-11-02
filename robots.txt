@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://poornima.edu.in/sinset2027/sitemap.xml
+
