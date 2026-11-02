@@ -749,6 +749,14 @@
             padding: 56px 0;
         }
 
+        #about {
+            padding-bottom: 36px;
+        }
+
+        #call-for-papers {
+            padding-top: 36px;
+        }
+
         #speakers {
             padding-bottom: 40px;
         }
@@ -1043,13 +1051,14 @@
 
         /* ---------- Tab Photo Strip ---------- */
         .tab-photo-strip {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 28px;
-            justify-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+            gap: clamp(14px, 2.5vw, 28px);
             width: 100%;
             margin: 32px 0 16px;
-            padding: 24px 16px;
+            padding: 24px 8px;
             box-sizing: border-box;
         }
 
@@ -1059,13 +1068,14 @@
             align-items: center;
             gap: 10px;
             text-align: center;
-            width: 100%;
+            flex: 1 1 0;
             min-width: 0;
+            max-width: 220px;
         }
 
         .tab-photo-circle {
-            width: clamp(140px, 20vw, 210px);
-            height: clamp(140px, 20vw, 210px);
+            width: clamp(100px, 14vw, 175px);
+            height: clamp(100px, 14vw, 175px);
             border-radius: 50%;
             overflow: hidden;
             border: 4px solid #fff;
@@ -1117,50 +1127,50 @@
 
         @media (max-width: 768px) {
             .tab-photo-strip {
-                gap: 12px;
-                padding: 16px 8px;
+                gap: 10px;
+                padding: 16px 4px;
                 margin: 20px 0 12px;
             }
 
             .tab-photo-circle {
-                width: clamp(75px, 22vw, 120px);
-                height: clamp(75px, 22vw, 120px);
+                width: clamp(68px, 18vw, 110px);
+                height: clamp(68px, 18vw, 110px);
                 border-width: 3px;
                 outline-width: 2px;
             }
 
             .tab-photo-label {
-                font-size: 0.85rem;
+                font-size: 0.82rem;
             }
 
             .tab-photo-sub {
-                font-size: 0.72rem;
+                font-size: 0.7rem;
             }
         }
 
         @media (max-width: 480px) {
             .tab-panel {
-                padding: 22px 14px;
+                padding: 22px 10px;
             }
 
             .tab-photo-strip {
-                gap: 8px;
-                padding: 12px 4px;
+                gap: 6px;
+                padding: 12px 0;
             }
 
             .tab-photo-circle {
-                width: clamp(64px, 21vw, 84px);
-                height: clamp(64px, 21vw, 84px);
+                width: clamp(56px, 17vw, 76px);
+                height: clamp(56px, 17vw, 76px);
                 border-width: 2px;
                 outline-width: 1.5px;
             }
 
             .tab-photo-label {
-                font-size: 0.76rem;
+                font-size: 0.72rem;
             }
 
             .tab-photo-sub {
-                font-size: 0.64rem;
+                font-size: 0.62rem;
                 margin-top: -4px;
             }
         }
@@ -2033,6 +2043,14 @@
             border-color: rgba(245, 185, 66, 0.4);
         }
 
+        .cm-card {
+            background: var(--bg-card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
         .cm-collapsible {
             background: var(--bg-card);
             border: 1px solid var(--line);
@@ -2277,6 +2295,8 @@
             padding: 34px 28px;
             box-shadow: var(--shadow);
             transition: transform 0.35s var(--ease);
+            display: flex;
+            flex-direction: column;
         }
 
         .venue-card:hover {
@@ -2300,12 +2320,26 @@
             margin-bottom: 12px;
         }
 
-        .venue-card .hint {
-            font-size: 0.84rem;
-            background: rgba(14, 122, 95, 0.06);
-            padding: 10px 14px;
-            border-radius: 10px;
-            margin-bottom: 18px;
+        .venue-map {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 10px 0 16px;
+            border: 1px solid var(--line);
+            box-shadow: 0 4px 12px rgba(11, 31, 58, 0.05);
+            background: var(--bg);
+        }
+
+        .venue-map iframe {
+            width: 100%;
+            height: 155px;
+            border: 0;
+            display: block;
+        }
+
+        .venue-card .btn {
+            margin-top: auto;
+            align-self: flex-start;
         }
 
         .contact-row {
@@ -2517,6 +2551,14 @@
                 padding: 42px 0;
             }
 
+            #about {
+                padding-bottom: 26px;
+            }
+
+            #call-for-papers {
+                padding-top: 26px;
+            }
+
             #speakers,
             #submission,
             #partners {
@@ -2713,6 +2755,7 @@
         @media (max-width: 768px) {
             .cm-boxes {
                 grid-template-columns: 1fr;
+                padding: 20px 14px;
             }
         }
     </style>
@@ -3087,6 +3130,14 @@
                     <div class="tab-photo-strip">
                         <div class="tab-photo-item">
                             <div class="tab-photo-circle">
+                                <img src="https://www.tourism.rajasthan.gov.in/content/dam/rajasthan-tourism/english/city/explore/125.jpg"
+                                    alt="AMBER PALACE, Jaipur" />
+                            </div>
+                            <span class="tab-photo-label">Jaipur</span>
+                            <span class="tab-photo-sub">AMBER PALACE</span>
+                        </div>
+                        <div class="tab-photo-item">
+                            <div class="tab-photo-circle">
                                 <img src="https://www.tourism.rajasthan.gov.in/content/dam/rajasthan-tourism/english/city/explore/Ana_Baradari01.jpg"
                                     alt="Ana Sagar Baradari, Ajmer" />
                             </div>
@@ -3119,8 +3170,7 @@
     <section class="section" id="call-for-papers">
         <div class="container">
             <div class="section-head reveal">
-                <span class="eyebrow">Call for Papers</span>
-                <h2>Research <span class="grad-text">Tracks</span></h2>
+                <h2>Call for <span class="grad-text">papers</span></h2>
                 <p>The theme of the 1st International Conference aims to explore the transformative power of intelligent
                     technologies in addressing the global sustainability challenge. Researchers are invited to submit
                     their original unpublished work in the following tracks:</p>
@@ -3699,191 +3749,183 @@
             </div>
 
             <div class="cm-group reveal">
-                <h3 class="cm-title">Track Chairs</h3>
-                <div class="cards-grid small">
-                    <div class="person-card sm">
-                        <h4>Dr. Seema Yadav</h4>
-                        <p>Associate Professor (FSH)</p>
-                    </div>
-                    <div class="person-card sm">
-                        <h4>Dr. Garima Singh</h4>
-                        <p>Associate Professor (FSH)</p>
-                    </div>
-                    <div class="person-card sm">
-                        <h4>Dr. Shiva Soni</h4>
-                        <p>Associate Professor (FSH)</p>
-                    </div>
-                    <div class="person-card sm">
-                        <h4>Dr. Vivek Kumar Jain</h4>
-                        <p>Associate Professor (FSH)</p>
-                    </div>
-                    <div class="person-card sm">
-                        <h4>Dr. Pramod Kumar Yadav</h4>
-                        <p>Associate Professor (FSH)</p>
-                    </div>
-                    <div class="person-card sm">
-                        <h4>Dr. Neha Vijay</h4>
-                        <p>Associate Professor (FSH)</p>
-                    </div>
-                    <div class="person-card sm">
-                        <h4>Dr. Vineet Sharma</h4>
-                        <p>Associate Professor (EED), PCE</p>
+                <h3 class="cm-title">All Committees <span class="chip-count">70+ members</span></h3>
+                <div class="cm-card">
+                    <div class="cm-boxes">
+                        <div class="cm-box">
+                            <h4>Track Chairs</h4>
+                            <div class="cm-member"><strong>Dr. Seema Yadav</strong><span>Associate Professor (FSH) ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Dr. Garima Singh</strong><span>Associate Professor (FSH) ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Dr. Shiva Soni</strong><span>Associate Professor (FSH) ·
+                                    Poornima
+                                    University</span></div>
+                            <div class="cm-member"><strong>Dr. Vivek Kumar Jain</strong><span>Associate Professor (FSH)
+                                    ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Dr. Pramod Kumar Yadav</strong><span>Associate Professor
+                                    (FSH) ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Dr. Neha Vijay</strong><span>Associate Professor (FSH) ·
+                                    Poornima
+                                    University</span></div>
+                            <div class="cm-member"><strong>Dr. Vineet Sharma</strong><span>Associate Professor (EED) ·
+                                    Poornima College of Engineering</span></div>
+                        </div>
+                        <div class="cm-box">
+                            <h4>Admin Support Committee</h4>
+                            <div class="cm-member"><strong>Dr. Devendra Somvanshi</strong><span>Registrar · Poornima
+                                    University</span></div>
+                            <div class="cm-member"><strong>Dr. Ashwin Lata</strong><span>Director, Administration ·
+                                    Poornima
+                                    University</span></div>
+                            <div class="cm-member"><strong>Dr. Mayank Sharma</strong><span>Associate Dean, IQAC ·
+                                    Poornima
+                                    University</span></div>
+                            <div class="cm-member"><strong>Dr. Rakesh Kumar Gupta</strong><span>Dean, Student Welfare ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Dr. Naval Kishor Jain</strong><span>COE · Poornima
+                                    University</span></div>
+                            <div class="cm-member"><strong>Dr. Swati Gokhru</strong><span>Dean, International Relations
+                                    ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Dr. Anmol Chaturvedi</strong><span>Assistant Registrar ·
+                                    Poornima
+                                    University</span></div>
+                        </div>
+                        <div class="cm-box">
+                            <h4>Organising Committee</h4>
+                            <div class="cm-member"><strong>Dr. Sunil Gupta</strong><span>Dean (R&amp;D) · Poornima
+                                    University</span></div>
+                            <div class="cm-member"><strong>Dr. Divya Prakash</strong><span>Professor · Poornima College
+                                    of
+                                    Engineering</span></div>
+                            <div class="cm-member"><strong>Dr. Sangita Gupta</strong><span>Professor (FSH) · Poornima
+                                    University</span></div>
+                            <div class="cm-member"><strong>Dr. Sunita Kumari</strong><span>Associate Professor (FSH) ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Dr. Shiva Soni</strong><span>Associate Professor (FSH) ·
+                                    Poornima
+                                    University</span></div>
+                            <div class="cm-member"><strong>Dr. Soanl Jain</strong><span>Associate Professor (FSH) ·
+                                    Poornima
+                                    University</span></div>
+                            <div class="cm-member"><strong>Dr. Poonam Sain</strong><span>Assistant Librarian ·
+                                    University
+                                    Maharani
+                                    College,
+                                    Jaipur, India</span></div>
+                            <div class="cm-member"><strong>Dr. Vijay Dangi</strong><span>Assistant Professor (FSH) ·
+                                    Poornima University</span></div>
+                        </div>
+                        <div class="cm-box">
+                            <h4>Review Committee</h4>
+                            <div class="cm-member"><strong>Dr. Pramod Kumar Yadav</strong><span>Associate Professor
+                                    (FSH) ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Dr. Vivek Kumar Jain</strong><span>Associate Professor (FSH)
+                                    ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Dr. Garima Singh</strong><span>Associate Professor (FSH) ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Dr. Mahima Kapoor</strong><span>Associate Professor (FSH) ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Dr. Neha Vijay</strong><span>Associate Professor (FSH) ·
+                                    Poornima
+                                    University</span></div>
+                        </div>
+                        <div class="cm-box">
+                            <h4>Finance Committee</h4>
+                            <div class="cm-member"><strong>Dr. Rakesh Aggarwal</strong><span>Associate Professor (FSH) ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Dr. Soanl Jain</strong><span>Associate Professor (FSH) ·
+                                    Poornima
+                                    University</span></div>
+                            <div class="cm-member"><strong>Ms. Poonam Sharma</strong><span>CFO · Poornima
+                                    University</span>
+                            </div>
+                        </div>
+                        <div class="cm-box">
+                            <h4>Publicity and Promotion</h4>
+                            <div class="cm-member"><strong>Dr. Randhir Singh Baghel</strong><span>Associate Professor
+                                    (FSH)
+                                    · Poornima University</span></div>
+                            <div class="cm-member"><strong>Dr. Seema Yadav</strong><span>Associate Professor (FSH) ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Dr. Pallavi Singh</strong><span>Associate Professor (FPH) ·
+                                    Poornima University</span></div>
+                        </div>
+                        <div class="cm-box">
+                            <h4>Sponsorship Committee</h4>
+                            <div class="cm-member"><strong>Dr. Ankita Dadhich Pran</strong><span>Professor (FSH) ·
+                                    Poornima
+                                    University</span></div>
+                            <div class="cm-member"><strong>Dr. Peeyush Kumar Kamlesh</strong><span>Associate Professor
+                                    (FSH)
+                                    · Poornima University</span></div>
+                            <div class="cm-member"><strong>Dr. Vineet Sharma</strong><span>Associate Professor (EED) ·
+                                    Poornima College of Engineering</span></div>
+                        </div>
+                        <div class="cm-box">
+                            <h4>Technical Programme Chairs</h4>
+                            <div class="cm-member"><strong>Dr. Swapan Banerjee</strong><span>Associate Professor (FPH) ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Dr. Prerna Srivastava</strong><span>Associate Professor (FSH)
+                                    ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Dr. Priyanka Lodha</strong><span>Associate Professor (FSH) ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Mr. Raghav Arora</strong><span>Student · Poornima
+                                    University</span></div>
+                            <div class="cm-member"><strong>Mr. Abhishek Sankhla</strong><span>Student · Poornima
+                                    University</span></div>
+                        </div>
+                        <div class="cm-box">
+                            <h4>Hospitality Committee</h4>
+                            <div class="cm-member"><strong>Mr. Mukul Sharma</strong><span>Assistant Professor (FSH) ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Mr. Mahesh Kumar</strong><span>Technical Assistant (FSH) ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Mr. Hariom Tiwari</strong><span>Technical Officer (FSH) ·
+                                    Poornima University</span></div>
+                        </div>
+                        <div class="cm-box">
+                            <h4>Media Coordination Committee</h4>
+                            <div class="cm-member"><strong>Dr. Shalini Saxena</strong><span>Professor (FSH) · Poornima
+                                    University</span></div>
+                            <div class="cm-member"><strong>Dr. Kuldip Sharma</strong><span>Associate Professor (FSH) ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Ms. Surbhi Athiya</strong><span>Assistant Professor (FSH) ·
+                                    Poornima University</span></div>
+                        </div>
+                        <div class="cm-box">
+                            <h4>Conference Web Admin</h4>
+                            <div class="cm-member"><strong>Dr. Randhir Singh Baghel</strong><span>Associate Professor
+                                    (FSH)
+                                    · Poornima University</span></div>
+                            <div class="cm-member"><strong>Ms. Rupam</strong><span>Student (FSH) · Poornima
+                                    University</span></div>
+                            <div class="cm-member"><strong>Mr. Nishant</strong><span>Student (FSH) · Poornima
+                                    University</span></div>
+                        </div>
+                        <div class="cm-box">
+                            <h4>Registration Committee</h4>
+                            <div class="cm-member"><strong>Dr. Garima Singh</strong><span>Associate Professor (FSH) ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Dr. Vijay Dangi</strong><span>Assistant Professor (FSH) ·
+                                    Poornima University</span></div>
+                            <div class="cm-member"><strong>Ms. Yashasvi Surana</strong><span>Assistant Professor (FSH) ·
+                                    Poornima University</span></div>
+                        </div>
+                        <div class="cm-box">
+                            <h4>Technical Network Administrator</h4>
+                            <div class="cm-member"><strong>Mr. Praful Kumar Dubey</strong><span>Network Administrator ·
+                                    Poornima University</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <details class="cm-collapsible">
-                <summary>All Committees <span class="chip-count">70+ members</span></summary>
-                <div class="cm-boxes">
-                    <div class="cm-box">
-                        <h4>Track Chairs</h4>
-                        <div class="cm-member"><strong>Dr. Seema Yadav</strong><span>Associate Professor (FSH) ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Dr. Garima Singh</strong><span>Associate Professor (FSH) ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Dr. Shiva Soni</strong><span>Associate Professor (FSH) · Poornima
-                                University</span></div>
-                        <div class="cm-member"><strong>Dr. Vivek Kumar Jain</strong><span>Associate Professor (FSH) ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Dr. Pramod Kumar Yadav</strong><span>Associate Professor (FSH) ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Dr. Neha Vijay</strong><span>Associate Professor (FSH) · Poornima
-                                University</span></div>
-                        <div class="cm-member"><strong>Dr. Vineet Sharma</strong><span>Associate Professor (EED) ·
-                                Poornima College of Engineering</span></div>
-                    </div>
-                    <div class="cm-box">
-                        <h4>Admin Support Committee</h4>
-                        <div class="cm-member"><strong>Dr. Devendra Somvanshi</strong><span>Registrar · Poornima
-                                University</span></div>
-                        <div class="cm-member"><strong>Dr. Ashwin Lata</strong><span>Director, Administration · Poornima
-                                University</span></div>
-                        <div class="cm-member"><strong>Dr. Mayank Sharma</strong><span>Associate Dean, IQAC · Poornima
-                                University</span></div>
-                        <div class="cm-member"><strong>Dr. Rakesh Kumar Gupta</strong><span>Dean, Student Welfare ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Dr. Naval Kishor Jain</strong><span>COE · Poornima
-                                University</span></div>
-                        <div class="cm-member"><strong>Dr. Swati Gokhru</strong><span>Dean, International Relations ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Dr. Anmol Chaturvedi</strong><span>Assistant Registrar · Poornima
-                                University</span></div>
-                    </div>
-                    <div class="cm-box">
-                        <h4>Organising Committee</h4>
-                        <div class="cm-member"><strong>Dr. Sunil Gupta</strong><span>Dean (R&amp;D) · Poornima
-                                University</span></div>
-                        <div class="cm-member"><strong>Dr. Divya Prakash</strong><span>Professor · Poornima College of
-                                Engineering</span></div>
-                        <div class="cm-member"><strong>Dr. Sangita Gupta</strong><span>Professor (FSH) · Poornima
-                                University</span></div>
-                        <div class="cm-member"><strong>Dr. Sunita Kumari</strong><span>Associate Professor (FSH) ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Dr. Shiva Soni</strong><span>Associate Professor (FSH) · Poornima
-                                University</span></div>
-                        <div class="cm-member"><strong>Dr. Soanl Jain</strong><span>Associate Professor (FSH) · Poornima
-                                University</span></div>
-                        <div class="cm-member"><strong>Dr. Poonam Sain</strong><span>Assistant Librarian · University
-                                Maharani
-                                College,
-                                Jaipur, India</span></div>
-                        <div class="cm-member"><strong>Dr. Vijay Dangi</strong><span>Assistant Professor (FSH) ·
-                                Poornima University</span></div>
-                    </div>
-                    <div class="cm-box">
-                        <h4>Review Committee</h4>
-                        <div class="cm-member"><strong>Dr. Pramod Kumar Yadav</strong><span>Associate Professor (FSH) ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Dr. Vivek Kumar Jain</strong><span>Associate Professor (FSH) ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Dr. Garima Singh</strong><span>Associate Professor (FSH) ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Dr. Mahima Kapoor</strong><span>Associate Professor (FSH) ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Dr. Neha Vijay</strong><span>Associate Professor (FSH) · Poornima
-                                University</span></div>
-                    </div>
-                    <div class="cm-box">
-                        <h4>Finance Committee</h4>
-                        <div class="cm-member"><strong>Dr. Rakesh Aggarwal</strong><span>Associate Professor (FSH) ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Dr. Soanl Jain</strong><span>Associate Professor (FSH) · Poornima
-                                University</span></div>
-                        <div class="cm-member"><strong>Ms. Poonam Sharma</strong><span>CFO · Poornima University</span>
-                        </div>
-                    </div>
-                    <div class="cm-box">
-                        <h4>Publicity and Promotion</h4>
-                        <div class="cm-member"><strong>Dr. Randhir Singh Baghel</strong><span>Associate Professor (FSH)
-                                · Poornima University</span></div>
-                        <div class="cm-member"><strong>Dr. Seema Yadav</strong><span>Associate Professor (FSH) ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Dr. Pallavi Singh</strong><span>Associate Professor (FPH) ·
-                                Poornima University</span></div>
-                    </div>
-                    <div class="cm-box">
-                        <h4>Sponsorship Committee</h4>
-                        <div class="cm-member"><strong>Dr. Ankita Dadhich Pran</strong><span>Professor (FSH) · Poornima
-                                University</span></div>
-                        <div class="cm-member"><strong>Dr. Peeyush Kumar Kamlesh</strong><span>Associate Professor (FSH)
-                                · Poornima University</span></div>
-                        <div class="cm-member"><strong>Dr. Vineet Sharma</strong><span>Associate Professor (EED) ·
-                                Poornima College of Engineering</span></div>
-                    </div>
-                    <div class="cm-box">
-                        <h4>Technical Programme Chairs</h4>
-                        <div class="cm-member"><strong>Dr. Swapan Banerjee</strong><span>Associate Professor (FPH) ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Dr. Prerna Srivastava</strong><span>Associate Professor (FSH) ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Dr. Priyanka Lodha</strong><span>Associate Professor (FSH) ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Mr. Raghav Arora</strong><span>Student · Poornima
-                                University</span></div>
-                    </div>
-                    <div class="cm-box">
-                        <h4>Hospitality Committee</h4>
-                        <div class="cm-member"><strong>Mr. Mukul Sharma</strong><span>Assistant Professor (FSH) ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Mr. Mahesh Kumar</strong><span>Technical Assistant (FSH) ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Mr. Hariom Tiwari</strong><span>Technical Officer (FSH) ·
-                                Poornima University</span></div>
-                    </div>
-                    <div class="cm-box">
-                        <h4>Media Coordination Committee</h4>
-                        <div class="cm-member"><strong>Dr. Shalini Saxena</strong><span>Professor (FSH) · Poornima
-                                University</span></div>
-                        <div class="cm-member"><strong>Dr. Kuldip Sharma</strong><span>Associate Professor (FSH) ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Ms. Surbhi Athiya</strong><span>Assistant Professor (FSH) ·
-                                Poornima University</span></div>
-                    </div>
-                    <div class="cm-box">
-                        <h4>Conference Web Admin</h4>
-                        <div class="cm-member"><strong>Dr. Randhir Singh Baghel</strong><span>Associate Professor (FSH)
-                                · Poornima University</span></div>
-                        <div class="cm-member"><strong>Ms. Rupam</strong><span>Student (FSH) · Poornima
-                                University</span></div>
-                        <div class="cm-member"><strong>Mr. Nishant</strong><span>Student (FSH) · Poornima
-                                University</span></div>
-                    </div>
-                    <div class="cm-box">
-                        <h4>Registration Committee</h4>
-                        <div class="cm-member"><strong>Dr. Garima Singh</strong><span>Associate Professor (FSH) ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Dr. Vijay Dangi</strong><span>Assistant Professor (FSH) ·
-                                Poornima University</span></div>
-                        <div class="cm-member"><strong>Ms. Yashasvi Surana</strong><span>Assistant Professor (FSH) ·
-                                Poornima University</span></div>
-                    </div>
-                    <div class="cm-box">
-                        <h4>Technical Network Administrator</h4>
-                        <div class="cm-member"><strong>Mr. Praful Kumar Dubey</strong><span>Network Administrator ·
-                                Poornima University</span></div>
-                    </div>
-                </div>
-            </details>
 
             <div class="cm-group reveal advisory">
                 <h3 class="cm-title">Advisory Committee</h3>
@@ -4108,15 +4150,22 @@
                     <h4>Poornima University</h4>
                     <p>Plot No. IS-2027–2031, Ramchandrapura, P.O. Vidhani, Vatika Road, Sitapura, Jaipur, Rajasthan —
                         303905</p>
-                    <p class="hint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px">
-                            <path d="M4 15V5h12M4 15l4 4h12l-4-4M4 15h12L20 5" />
-                        </svg> Railway station &amp; bus stand ≈ 25 km · <svg width="16" height="16" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" style="vertical-align:-3px">
-                            <path
-                                d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
-                        </svg> Jaipur International Airport nearby</p>
+                    <div class="venue-map">
+                        <iframe
+                            title="Poornima University Location Map"
+                            src="https://maps.google.com/maps?q=Poornima%20University%2C%20Jaipur&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                            loading="lazy"
+                            allowfullscreen=""
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <a class="btn btn-primary-outline" href="https://maps.google.com/?q=Poornima+University,+Jaipur" target="_blank" rel="noopener noreferrer">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        Directions
+                    </a>
                 </div>
                 <div class="venue-card reveal" id="organising-secretary">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -4124,7 +4173,7 @@
                         <path
                             d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z" />
                     </svg>
-                    <h4>Organising Secretaries</h4>
+                    <h4>CMT Related Queries</h4>
                     <div class="contact-row">
                         <div><strong>Dr. Randhir Singh Baghel</strong><a href="tel:+919827658770">+91 98276 58770</a>
                         </div>
@@ -4136,12 +4185,17 @@
                 <div class="venue-card reveal">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="1.8">
-                        <rect x="2" y="4" width="20" height="16" rx="2" />
-                        <path d="M22 7l-10 6L2 7" />
+                        <path
+                            d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z" />
                     </svg>
                     <h4>General Enquiries</h4>
-                    <p>Questions about paper submission, registration, or sponsorship — our organising secretaries are
-                        happy to help.</p>
+                    <div class="contact-row">
+                        <div><strong>Dr. Randhir Singh Baghel</strong><a href="tel:+919827658770">+91 98276 58770</a>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <div><strong>Dr. Shrikant Verma</strong><a href="tel:+917611016103">+91 76110 16103</a></div>
+                    </div>
                     <a class="btn btn-primary-outline" href="mailto:sinset2027@poornima.edu.in">Email Us</a>
                 </div>
             </div>
