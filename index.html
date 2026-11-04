@@ -1947,7 +1947,7 @@
         }
 
         .rg-head div:first-child,
-        .rg-row > div:first-child {
+        .rg-row>div:first-child {
             text-align: left;
         }
 
@@ -2436,7 +2436,8 @@
         /* ---------- Accommodation ---------- */
         .accom-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, minmax(0, 440px));
+            justify-content: center;
             gap: 24px;
             margin-bottom: 28px;
         }
@@ -2544,6 +2545,8 @@
             align-items: center;
             gap: 18px;
             box-shadow: 0 6px 20px rgba(245, 185, 66, 0.08);
+            max-width: 904px;
+            margin: 0 auto;
         }
 
         .accom-deadline-icon {
@@ -2836,16 +2839,17 @@
             .nav-links {
                 position: fixed;
                 top: 0;
-                right: -320px;
-                width: 300px;
+                right: -100%;
+                width: 100%;
                 height: 100vh;
+                height: 100dvh;
                 background: #fff;
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 100px 30px 30px;
+                padding: 95px 32px 36px;
                 gap: 6px;
-                box-shadow: -20px 0 60px rgba(11, 31, 58, 0.15);
-                transition: right 0.4s var(--ease);
+                box-shadow: none;
+                transition: right 0.35s var(--ease);
                 z-index: 1000;
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
@@ -2858,7 +2862,7 @@
             .nav-links a {
                 width: 100%;
                 padding: 13px 16px;
-                font-size: 1rem;
+                font-size: 1.05rem;
             }
 
             .nav-links a.nav-cta {
@@ -3123,7 +3127,7 @@
                 <a href="#committee">Committee</a>
                 <a href="#partners">Partners</a>
                 <a href="#sponsorship">Sponsorship</a>
-                <a href="#accomodation">Accomodation</a>
+                <a href="#accomodation">Accommodation</a>
                 <a href="#venue" class="nav-cta">Contact</a>
             </nav>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -3850,7 +3854,8 @@
                 </div>
             </div>
 
-            <div class="fee-note reveal" data-currency="inr"><span class="fee-tag indian">Indian &amp; SAARC Participants (INR)</span></div>
+            <div class="fee-note reveal" data-currency="inr"><span class="fee-tag indian">Indian &amp; SAARC
+                    Participants (INR)</span></div>
             <div class="reg-table reveal" data-currency="inr">
                 <div class="rg-head">
                     <div>Category</div>
@@ -3879,18 +3884,17 @@
                 <div class="rg-row">
                     <div><strong>*Paper Presentation Only</strong></div><span class="cell" data-inr="₹2,500"
                         data-usd="$125">₹2,500</span><span class="cell" data-inr="₹3,000"
-                        data-usd="$150">₹3,000</span><span class="cell" data-inr="₹3,500"
-                        data-usd="$200">₹3,500</span>
+                        data-usd="$150">₹3,000</span><span class="cell" data-inr="₹3,500" data-usd="$200">₹3,500</span>
                 </div>
                 <div class="rg-row">
                     <div><strong>Attendees/Accompany</strong></div><span class="cell" data-inr="₹1,000"
                         data-usd="$50">₹1,000</span><span class="cell" data-inr="₹1,500"
-                        data-usd="$100">₹1,500</span><span class="cell" data-inr="₹2,000"
-                        data-usd="$150">₹2,000</span>
+                        data-usd="$100">₹1,500</span><span class="cell" data-inr="₹2,000" data-usd="$150">₹2,000</span>
                 </div>
             </div>
 
-            <div class="fee-note reveal" data-currency="usd"><span class="fee-tag foreign">Foreign Participants (USD)</span></div>
+            <div class="fee-note reveal" data-currency="usd"><span class="fee-tag foreign">Foreign Participants
+                    (USD)</span></div>
             <div class="reg-table reveal" data-currency="usd">
                 <div class="rg-head">
                     <div>Category</div>
@@ -3901,36 +3905,33 @@
                 <div class="rg-row">
                     <div><strong>Scholars/Students</strong></div><span class="cell" data-usd="$250"
                         data-inr="₹9,000">$250</span><span class="cell" data-usd="$300"
-                        data-inr="₹9,500">$300</span><span class="cell" data-usd="$400"
-                        data-inr="₹10,000">$400</span>
+                        data-inr="₹9,500">$300</span><span class="cell" data-usd="$400" data-inr="₹10,000">$400</span>
                 </div>
                 <div class="rg-row">
                     <div><strong>Faculty/Scientist/Postdoc</strong></div><span class="cell" data-usd="$350"
                         data-inr="₹10,000">$350</span><span class="cell" data-usd="$400"
-                        data-inr="₹10,500">$400</span><span class="cell" data-usd="$500"
-                        data-inr="₹11,000">$500</span>
+                        data-inr="₹10,500">$400</span><span class="cell" data-usd="$500" data-inr="₹11,000">$500</span>
                 </div>
                 <div class="rg-row">
                     <div><strong>Industry Person</strong></div><span class="cell" data-usd="$450"
                         data-inr="₹11,000">$450</span><span class="cell" data-usd="$500"
-                        data-inr="₹11,500">$500</span><span class="cell" data-usd="$600"
-                        data-inr="₹12,000">$600</span>
+                        data-inr="₹11,500">$500</span><span class="cell" data-usd="$600" data-inr="₹12,000">$600</span>
                 </div>
                 <div class="rg-row">
                     <div><strong>*Paper Presentation Only</strong></div><span class="cell" data-usd="$125"
                         data-inr="₹2,500">$125</span><span class="cell" data-usd="$150"
-                        data-inr="₹3,000">$150</span><span class="cell" data-usd="$200"
-                        data-inr="₹3,500">$200</span>
+                        data-inr="₹3,000">$150</span><span class="cell" data-usd="$200" data-inr="₹3,500">$200</span>
                 </div>
                 <div class="rg-row">
                     <div><strong>Attendees/Accompany</strong></div><span class="cell" data-usd="$50"
                         data-inr="₹1,000">$50</span><span class="cell" data-usd="$100"
-                        data-inr="₹1,500">$100</span><span class="cell" data-usd="$150"
-                        data-inr="₹2,000">$150</span>
+                        data-inr="₹1,500">$100</span><span class="cell" data-usd="$150" data-inr="₹2,000">$150</span>
                 </div>
             </div>
 
-            <p class="reg-footnote reveal"><span class="ast">*</span>The paper presentation only covers paper presentation and issuance of a presentation certificate only. It does not include publication of the paper in conference proceedings or any journal.</p>
+            <p class="reg-footnote reveal"><span class="ast">*</span>The paper presentation only covers paper
+                presentation and issuance of a presentation certificate only. It does not include publication of the
+                paper in conference proceedings or any journal.</p>
 
             <div class="bank-wrap two-col reveal">
                 <div class="bank-card">
@@ -4171,8 +4172,7 @@
                             <div class="cm-member"><strong>Dr. Poonam Sain</strong><span>Assistant Librarian ·
                                     University
                                     Maharani
-                                    College,
-                                    Jaipur, India</span></div>
+                                    College</span></div>
                             <div class="cm-member"><strong>Dr. Vijay Dangi</strong><span>Assistant Professor (FSH) ·
                                     Poornima University</span></div>
                         </div>
@@ -4505,20 +4505,6 @@
             </div>
 
             <div class="accom-grid">
-                <!-- Invited Speakers -->
-                <div class="accom-card reveal">
-                    <span class="accom-badge amber">Invited Dignitaries</span>
-                    <div class="accom-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M3 21h18M5 21V7l7-4 7 4v14M8 9h1M15 9h1M8 13h1M15 13h1M8 17h8" />
-                        </svg>
-                    </div>
-                    <h3>Invited Speakers</h3>
-                    <p>Suitable accommodation will be provided to the <strong>INVITED SPEAKERS</strong> on twin sharing
-                        basis in the <strong>University Guest Houses / Shanti Guest House</strong>.</p>
-                </div>
-
                 <!-- Participants -->
                 <div class="accom-card featured reveal">
                     <span class="accom-badge">Advance Booking</span>
@@ -4533,9 +4519,10 @@
                     <div class="accom-price">₹750/- <span>per day (sharing basis)</span></div>
                     <p>Accommodation will be provided to the <strong>PARTICIPANTS</strong> on advance booking @ 750/-
                         per day (as per hotel check-in / check-out rules) on sharing basis at suitable guest houses.</p>
-                    <a href="https://forms.gle/" target="_blank" rel="noopener noreferrer"
-                        class="btn btn-primary btn-sm">Click here for Form <svg width="14" height="14"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeB4BmxAZDLtpzpxRxdzbtpTwZ5syRkWbBqn7Clo4IxHUJh3w/viewform"
+                        target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Click here for Form
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
                         </svg></a>
                 </div>
@@ -4664,7 +4651,7 @@
                     <a href="#committee">Committee</a>
                     <a href="#partners">Partners</a>
                     <a href="#sponsorship">Sponsorship</a>
-                    <a href="#accomodation">Accomodation</a>
+                    <a href="#accomodation">Accommodation</a>
                     <a href="#venue">Venue</a>
                 </div>
             </div>
