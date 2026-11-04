@@ -1904,15 +1904,34 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: var(--radius);
-            overflow: hidden;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
             margin-bottom: 18px;
+        }
+
+        .reg-table::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .reg-table::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 999px;
+        }
+
+        .reg-table::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.22);
+            border-radius: 999px;
+        }
+
+        .reg-table::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.38);
         }
 
         .rg-head,
         .rg-row {
             display: grid;
-            grid-template-columns: 1.6fr 1fr 1fr 1fr;
-            gap: 8px;
+            grid-template-columns: 1.8fr 1fr 1fr 1fr;
+            gap: 12px;
             padding: 16px 26px;
             align-items: center;
         }
@@ -1925,6 +1944,21 @@
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: rgba(255, 255, 255, 0.8);
+        }
+
+        .rg-head div:first-child,
+        .rg-row > div:first-child {
+            text-align: left;
+        }
+
+        .rg-head div:not(:first-child),
+        .rg-row .cell {
+            text-align: center;
+        }
+
+        .rg-head div:nth-child(2),
+        .rg-row .cell:nth-of-type(1) {
+            color: #7fefc8;
         }
 
         .rg-row {
@@ -1948,14 +1982,22 @@
             color: #fff;
         }
 
-        .rg-head div:not(:first-child),
-        .cell:not(:first-of-type) {
-            text-align: center;
+        .reg-footnote {
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.78);
+            line-height: 1.6;
+            margin: 16px 0 28px;
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 3px solid #7fefc8;
+            border-radius: var(--radius-sm);
         }
 
-        .rg-head div:nth-child(2),
-        .rg-row .cell:nth-of-type(1) {
-            color: #7fefc8;
+        .reg-footnote .ast {
+            color: #f5b942;
+            font-weight: 700;
+            margin-right: 4px;
         }
 
         .bank-wrap {
@@ -2773,6 +2815,24 @@
                 z-index: 1001;
             }
 
+            .nav-backdrop {
+                display: block;
+                position: fixed;
+                inset: 0;
+                background: rgba(11, 31, 58, 0.45);
+                backdrop-filter: blur(4px);
+                -webkit-backdrop-filter: blur(4px);
+                z-index: 999;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.35s ease;
+            }
+
+            .nav-backdrop.open {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
             .nav-links {
                 position: fixed;
                 top: 0;
@@ -2786,6 +2846,9 @@
                 gap: 6px;
                 box-shadow: -20px 0 60px rgba(11, 31, 58, 0.15);
                 transition: right 0.4s var(--ease);
+                z-index: 1000;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
             }
 
             .nav-links.open {
@@ -2850,16 +2913,23 @@
 
             .rg-head,
             .rg-row {
-                grid-template-columns: 1.4fr 1fr 1fr 1fr;
-                padding: 13px 16px;
+                grid-template-columns: 1.8fr 1fr 1fr 1fr;
+                padding: 14px 16px;
+                min-width: 520px;
+                gap: 10px;
             }
 
             .rg-head {
-                font-size: 0.7rem;
+                font-size: 0.76rem;
+            }
+
+            .rg-row strong {
+                font-size: 0.88rem;
+                line-height: 1.35;
             }
 
             .cell {
-                font-size: 0.8rem;
+                font-size: 0.88rem;
             }
 
             .bank-table td:first-child {
@@ -3060,6 +3130,7 @@
                 <span></span><span></span><span></span>
             </button>
         </div>
+        <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
     </header>
 
     <!-- ============ HERO ============ -->
@@ -3779,7 +3850,7 @@
                 </div>
             </div>
 
-            <div class="fee-note reveal"><span class="fee-tag indian">Indian &amp; SAARC Participants</span></div>
+            <div class="fee-note reveal" data-currency="inr"><span class="fee-tag indian">Indian &amp; SAARC Participants (INR)</span></div>
             <div class="reg-table reveal" data-currency="inr">
                 <div class="rg-head">
                     <div>Category</div>
@@ -3788,31 +3859,38 @@
                     <div>Late</div>
                 </div>
                 <div class="rg-row">
-                    <div><strong>Scholars / Students</strong></div><span class="cell" data-inr="₹10,000"
-                        data-usd="$250">₹10,000</span><span class="cell" data-inr="₹10,500"
-                        data-usd="$300">₹10,500</span><span class="cell" data-inr="₹12,000"
-                        data-usd="$400">₹12,000</span>
+                    <div><strong>Scholars/Students</strong></div><span class="cell" data-inr="₹9,000"
+                        data-usd="$250">₹9,000</span><span class="cell" data-inr="₹9,500"
+                        data-usd="$300">₹9,500</span><span class="cell" data-inr="₹10,000"
+                        data-usd="$400">₹10,000</span>
                 </div>
                 <div class="rg-row">
-                    <div><strong>Postdoc / Faculty / Scientist</strong></div><span class="cell" data-inr="₹12,000"
-                        data-usd="$350">₹12,000</span><span class="cell" data-inr="₹12,500"
-                        data-usd="$400">₹12,500</span><span class="cell" data-inr="₹14,000"
-                        data-usd="$500">₹14,000</span>
+                    <div><strong>Faculty/Scientist/Postdoc</strong></div><span class="cell" data-inr="₹10,000"
+                        data-usd="$350">₹10,000</span><span class="cell" data-inr="₹10,500"
+                        data-usd="$400">₹10,500</span><span class="cell" data-inr="₹11,000"
+                        data-usd="$500">₹11,000</span>
                 </div>
                 <div class="rg-row">
-                    <div><strong>Industry Person</strong></div><span class="cell" data-inr="₹13,000"
-                        data-usd="$450">₹13,000</span><span class="cell" data-inr="₹13,500"
-                        data-usd="$500">₹13,500</span><span class="cell" data-inr="₹15,000"
-                        data-usd="$600">₹15,000</span>
+                    <div><strong>Industry Person</strong></div><span class="cell" data-inr="₹11,000"
+                        data-usd="$450">₹11,000</span><span class="cell" data-inr="₹11,500"
+                        data-usd="$500">₹11,500</span><span class="cell" data-inr="₹12,000"
+                        data-usd="$600">₹12,000</span>
                 </div>
                 <div class="rg-row">
-                    <div><strong>Attendees / Accompanying</strong></div><span class="cell" data-inr="₹1,000"
+                    <div><strong>*Paper Presentation Only</strong></div><span class="cell" data-inr="₹2,500"
+                        data-usd="$125">₹2,500</span><span class="cell" data-inr="₹3,000"
+                        data-usd="$150">₹3,000</span><span class="cell" data-inr="₹3,500"
+                        data-usd="$200">₹3,500</span>
+                </div>
+                <div class="rg-row">
+                    <div><strong>Attendees/Accompany</strong></div><span class="cell" data-inr="₹1,000"
                         data-usd="$50">₹1,000</span><span class="cell" data-inr="₹1,500"
-                        data-usd="$100">₹1,500</span><span class="cell" data-inr="₹2,500" data-usd="$200">₹2,500</span>
+                        data-usd="$100">₹1,500</span><span class="cell" data-inr="₹2,000"
+                        data-usd="$150">₹2,000</span>
                 </div>
             </div>
 
-            <div class="fee-note reveal"><span class="fee-tag foreign">Foreign Participants</span></div>
+            <div class="fee-note reveal" data-currency="usd"><span class="fee-tag foreign">Foreign Participants (USD)</span></div>
             <div class="reg-table reveal" data-currency="usd">
                 <div class="rg-head">
                     <div>Category</div>
@@ -3821,26 +3899,38 @@
                     <div>Late</div>
                 </div>
                 <div class="rg-row">
-                    <div><strong>Scholars / Students</strong></div><span class="cell" data-usd="$250"
-                        data-inr="₹10,000">$250</span><span class="cell" data-usd="$300"
-                        data-inr="₹10,500">$300</span><span class="cell" data-usd="$400" data-inr="₹12,000">$400</span>
+                    <div><strong>Scholars/Students</strong></div><span class="cell" data-usd="$250"
+                        data-inr="₹9,000">$250</span><span class="cell" data-usd="$300"
+                        data-inr="₹9,500">$300</span><span class="cell" data-usd="$400"
+                        data-inr="₹10,000">$400</span>
                 </div>
                 <div class="rg-row">
-                    <div><strong>Postdoc / Faculty / Scientist</strong></div><span class="cell" data-usd="$350"
-                        data-inr="₹12,000">$350</span><span class="cell" data-usd="$400"
-                        data-inr="₹12,500">$400</span><span class="cell" data-usd="$500" data-inr="₹14,000">$500</span>
+                    <div><strong>Faculty/Scientist/Postdoc</strong></div><span class="cell" data-usd="$350"
+                        data-inr="₹10,000">$350</span><span class="cell" data-usd="$400"
+                        data-inr="₹10,500">$400</span><span class="cell" data-usd="$500"
+                        data-inr="₹11,000">$500</span>
                 </div>
                 <div class="rg-row">
                     <div><strong>Industry Person</strong></div><span class="cell" data-usd="$450"
-                        data-inr="₹13,000">$450</span><span class="cell" data-usd="$500"
-                        data-inr="₹13,500">$500</span><span class="cell" data-usd="$600" data-inr="₹15,000">$600</span>
+                        data-inr="₹11,000">$450</span><span class="cell" data-usd="$500"
+                        data-inr="₹11,500">$500</span><span class="cell" data-usd="$600"
+                        data-inr="₹12,000">$600</span>
                 </div>
                 <div class="rg-row">
-                    <div><strong>Attendees / Accompanying</strong></div><span class="cell" data-usd="$50"
+                    <div><strong>*Paper Presentation Only</strong></div><span class="cell" data-usd="$125"
+                        data-inr="₹2,500">$125</span><span class="cell" data-usd="$150"
+                        data-inr="₹3,000">$150</span><span class="cell" data-usd="$200"
+                        data-inr="₹3,500">$200</span>
+                </div>
+                <div class="rg-row">
+                    <div><strong>Attendees/Accompany</strong></div><span class="cell" data-usd="$50"
                         data-inr="₹1,000">$50</span><span class="cell" data-usd="$100"
-                        data-inr="₹1,500">$100</span><span class="cell" data-usd="$200" data-inr="₹2,500">$200</span>
+                        data-inr="₹1,500">$100</span><span class="cell" data-usd="$150"
+                        data-inr="₹2,000">$150</span>
                 </div>
             </div>
+
+            <p class="reg-footnote reveal"><span class="ast">*</span>The paper presentation only covers paper presentation and issuance of a presentation certificate only. It does not include publication of the paper in conference proceedings or any journal.</p>
 
             <div class="bank-wrap two-col reveal">
                 <div class="bank-card">
@@ -4614,17 +4704,18 @@
         // Mobile menu
         const hamburger = document.getElementById("hamburger");
         const navLinks = document.getElementById("navLinks");
-        hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("open");
-            navLinks.classList.toggle("open");
-            document.body.style.overflow = navLinks.classList.contains("open") ? "hidden" : "";
-        });
+        const navBackdrop = document.getElementById("navBackdrop");
+        function toggleMenu(open) {
+            const isOpen = typeof open === "boolean" ? open : !navLinks.classList.contains("open");
+            hamburger.classList.toggle("open", isOpen);
+            navLinks.classList.toggle("open", isOpen);
+            if (navBackdrop) navBackdrop.classList.toggle("open", isOpen);
+            document.body.style.overflow = isOpen ? "hidden" : "";
+        }
+        hamburger.addEventListener("click", () => toggleMenu());
+        if (navBackdrop) navBackdrop.addEventListener("click", () => toggleMenu(false));
         navLinks.querySelectorAll("a").forEach((a) =>
-            a.addEventListener("click", () => {
-                hamburger.classList.remove("open");
-                navLinks.classList.remove("open");
-                document.body.style.overflow = "";
-            })
+            a.addEventListener("click", () => toggleMenu(false))
         );
 
         // Reveal on scroll
@@ -4661,21 +4752,21 @@
 
         // Currency toggle
         const curBtns = document.querySelectorAll(".cur-btn");
-        const tables = document.querySelectorAll(".reg-table");
+        const curElements = document.querySelectorAll("[data-currency]");
         function applyCurrency(cur) {
             curBtns.forEach((b) => b.classList.toggle("active", b.dataset.cur === cur));
-            tables.forEach((table) => {
-                const show = table.dataset.currency === cur;
-                table.style.display = show ? "" : "none";
-                table.querySelectorAll(".cell").forEach((c) => (c.textContent = c.dataset[cur]));
+            curElements.forEach((el) => {
+                const show = el.dataset.currency === cur;
+                el.style.display = show ? "" : "none";
+                if (show) {
+                    el.querySelectorAll(".cell").forEach((c) => {
+                        if (c.dataset[cur]) c.textContent = c.dataset[cur];
+                    });
+                }
             });
         }
         curBtns.forEach((b) => b.addEventListener("click", () => applyCurrency(b.dataset.cur)));
         applyCurrency("inr");
-        tables.forEach((table) => {
-            const show = table.dataset.currency === "inr";
-            table.style.display = show ? "" : "none";
-        });
 
         // Animated stat counters
         const statIo = new IntersectionObserver(
