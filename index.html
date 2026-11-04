@@ -2818,24 +2818,6 @@
                 z-index: 1001;
             }
 
-            .nav-backdrop {
-                display: block;
-                position: fixed;
-                inset: 0;
-                background: rgba(11, 31, 58, 0.45);
-                backdrop-filter: blur(4px);
-                -webkit-backdrop-filter: blur(4px);
-                z-index: 999;
-                opacity: 0;
-                pointer-events: none;
-                transition: opacity 0.35s ease;
-            }
-
-            .nav-backdrop.open {
-                opacity: 1;
-                pointer-events: auto;
-            }
-
             .nav-links {
                 position: fixed;
                 top: 0;
@@ -2844,12 +2826,13 @@
                 height: 100vh;
                 height: 100dvh;
                 background: #fff;
+                display: flex;
                 flex-direction: column;
-                align-items: flex-start;
-                padding: 95px 32px 36px;
-                gap: 6px;
+                align-items: stretch;
+                padding: 68px 24px 20px;
+                gap: 2px;
                 box-shadow: none;
-                transition: right 0.35s var(--ease);
+                transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
                 z-index: 1000;
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
@@ -2861,13 +2844,31 @@
 
             .nav-links a {
                 width: 100%;
-                padding: 13px 16px;
-                font-size: 1.05rem;
+                padding: 8px 14px;
+                font-size: 0.95rem;
+                font-weight: 500;
+                color: var(--ink-2);
+                border-radius: 8px;
+                text-align: left;
+                display: block;
+                transition: all 0.2s;
+            }
+
+            .nav-links a:hover,
+            .nav-links a.active {
+                color: var(--primary);
+                background: rgba(14, 122, 95, 0.08);
             }
 
             .nav-links a.nav-cta {
                 margin-left: 0;
+                margin-top: 8px;
+                padding: 10px 16px;
                 text-align: center;
+                background: var(--navy);
+                color: #fff;
+                font-weight: 600;
+                border-radius: 10px;
             }
 
             .section {
@@ -3134,7 +3135,6 @@
                 <span></span><span></span><span></span>
             </button>
         </div>
-        <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
     </header>
 
     <!-- ============ HERO ============ -->
@@ -4052,7 +4052,7 @@
                     </div>
                     <div class="person-card">
                         <div class="p-avatar"><img
-                                src="https://media.licdn.com/dms/image/v2/D5603AQHkSLwuV3j8Dw/profile-displayphoto-crop_800_800/B56aAVaQqqGsAM-/0/1787065601551?e=1795046400&v=beta&t=aeENrhYXOVpgu8G_AzWmfMYvnExrKLCxrTd4dMAPQl8"
+                                src="https://media.licdn.com/dms/image/v2/D5603AQEssMfiqivb8Q/profile-displayphoto-crop_800_800/B56aGclk3eHQAI-/0/1793628459751?e=1795651200&v=beta&t=nVtbUtsm7fggv9jSEkllZmg3JyJV-HghLf4QO8qzHnw"
                                 alt="Dr. Udit Mamodiya"
                                 style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
                         <h4>Dr. Udit Mamodiya</h4>
@@ -4691,19 +4691,28 @@
         // Mobile menu
         const hamburger = document.getElementById("hamburger");
         const navLinks = document.getElementById("navLinks");
-        const navBackdrop = document.getElementById("navBackdrop");
-        function toggleMenu(open) {
-            const isOpen = typeof open === "boolean" ? open : !navLinks.classList.contains("open");
+        function closeMenu() {
+            hamburger.classList.remove("open");
+            navLinks.classList.remove("open");
+            document.body.style.overflow = "";
+        }
+        function toggleMenu() {
+            const isOpen = navLinks.classList.toggle("open");
             hamburger.classList.toggle("open", isOpen);
-            navLinks.classList.toggle("open", isOpen);
-            if (navBackdrop) navBackdrop.classList.toggle("open", isOpen);
             document.body.style.overflow = isOpen ? "hidden" : "";
         }
-        hamburger.addEventListener("click", () => toggleMenu());
-        if (navBackdrop) navBackdrop.addEventListener("click", () => toggleMenu(false));
+        hamburger.addEventListener("click", (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
         navLinks.querySelectorAll("a").forEach((a) =>
-            a.addEventListener("click", () => toggleMenu(false))
+            a.addEventListener("click", () => closeMenu())
         );
+        document.addEventListener("click", (e) => {
+            if (navLinks.classList.contains("open") && !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                closeMenu();
+            }
+        });
 
         // Reveal on scroll
         const io = new IntersectionObserver(
